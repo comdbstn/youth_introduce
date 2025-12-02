@@ -48,19 +48,10 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.8 }}
-        className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 text-center"
+        className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 sm:mb-8 text-center font-mincho"
       >
-        Tei Youth
+        鄭允琇
       </motion.h1>
-
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.4, duration: 0.8 }}
-        className="text-accent1 text-xs sm:text-sm tracking-widest mb-6 sm:mb-8 text-center"
-      >
-        蒼狐 | AOKITSUNE
-      </motion.p>
 
       {/* プログレスバー */}
       <div className="w-56 sm:w-64 md:w-72 h-1 bg-white/10 rounded-full overflow-hidden">

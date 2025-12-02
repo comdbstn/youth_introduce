@@ -61,7 +61,7 @@ export default function ConnectSection() {
             rel="noopener noreferrer"
             className="inline-block bg-gradient-to-r from-accent3 to-accent1 text-primary font-bold text-base sm:text-lg md:text-xl px-8 sm:px-10 md:px-12 py-4 sm:py-5 rounded-full hover:shadow-2xl hover:shadow-accent3/50 active:shadow-lg active:scale-95 transition-all duration-300 transform hover:scale-105 min-h-[56px] flex items-center justify-center"
           >
-            💬 LINE 친구추가하기
+            💬 LINE友達追加
           </a>
           <p className="mt-3 sm:mt-4 text-accent2/70 text-xs sm:text-sm">
             いつでもお気軽にご連絡ください
