@@ -10,130 +10,16 @@ export default function PortfolioSection() {
   const isInView = useInView(sectionRef, { once: false, amount: isMobile ? 0.05 : 0.2 });
   const [filter, setFilter] = useState<string>("all");
 
-  const portfolioData = [
-    {
-      id: "muko",
-      title: "無古 (Muko)",
-      subtitle: "大型コミュニティサイト",
-      period: "3ヶ月",
-      url: "https://muko.kr",
-      description: "国内映画コミュニティサイト。コミュニティ、イベント、メッセージ、出席、お知らせなどの機能を提供。月間アクティブユーザー約30万人。",
-      tech: ["NextJS", "NestJS", "AWS", "ECS", "Docker"],
-      features: [
-        "コミュニティフォーラム - 映画レビュー、討論、情報共有",
-        "イベント管理 - 試写会、プレミア情報",
-        "メッセージシステム - ユーザー間コミュニケーション",
-        "出席チェック - 毎日ログインリワード",
-        "管理者CMS - コンテンツ管理システム",
-      ],
-      achievements: [
-        "MAU(月間アクティブユーザー) 約30万人達成",
-        "1日平均 10,000+ 訪問者",
-        "安定的なECSインフラ運用",
-      ],
-      category: "web",
-    },
-    {
-      id: "blueclub",
-      title: "ブルークラブ創業",
-      subtitle: "ホームページ",
-      period: "5日",
-      url: "https://blueclub-changup.com",
-      description: "ブルークラブ創業ホームページ。",
-      tech: ["React", "Next.js"],
-      category: "web",
-    },
-    {
-      id: "choonsim",
-      title: "Choonsim",
-      subtitle: "暗号貨幣取引プラットフォーム",
-      period: "10日",
-      url: "https://www.choonsim.com",
-      description: "暗号貨幣取引プラットフォーム。リアルタイム価格照会、取引、チャート照会機能。",
-      tech: ["React", "Vite", "NestJS"],
-      category: "web",
-    },
-    {
-      id: "eden",
-      title: "Eden",
-      subtitle: "Webプラットフォーム",
-      period: "1ヶ月",
-      url: "https://eden-world.net",
-      description: "バーチャルYouTuberのためのアバターマーケットプレイス。",
-      tech: ["React", "NestJS", "AWS"],
-      category: "web",
-    },
-    {
-      id: "dutyfree",
-      title: "DutyFree Price",
-      subtitle: "Webプラットフォーム & PWA",
-      period: "3日",
-      url: "https://dutyfree-price.com",
-      description: "免税店商品クローリング価格比較サービス。",
-      tech: ["React", "NestJS", "Python"],
-      category: "web",
-    },
-    {
-      id: "apex",
-      title: "Apex",
-      subtitle: "Webプラットフォーム",
-      period: "5日",
-      url: "https://a-pex.co.kr",
-      description: "英語学習資料販売プラットフォーム。",
-      tech: ["React", "NestJS", "AWS"],
-      category: "web",
-    },
-    {
-      id: "podcaster",
-      title: "Podcaster",
-      subtitle: "Webアプリプラットフォーム",
-      period: "1日",
-      url: "https://podcaster.boltlab.co",
-      description: "ポッドキャストプラットフォーム開発。",
-      tech: ["React", "JavaScript", "Node.js", "Python", "FastAPI", "LLM", "MongoDB"],
-      category: "web",
-    },
-    {
-      id: "universitystudio",
-      title: "University Studio",
-      subtitle: "大学プラットフォーム",
-      period: "3ヶ月",
-      url: "https://universitystudio.co.kr",
-      description: "大学生向けプラットフォーム開発。",
-      tech: ["Vue.js", "Angular", "Node.js", "React", "Python", "FastAPI", "LLM", "MongoDB"],
-      category: "web",
-    },
-    {
-      id: "doctordrive",
-      title: "Doctor Drive",
-      subtitle: "医療プラットフォーム",
-      period: "2週間",
-      url: "https://doctordrive.vercel.app",
-      description: "医療情報プラットフォーム。",
-      tech: ["HTML5", "CSS3", "JavaScript", "Python", "LLM"],
-      category: "web",
-    },
-    {
-      id: "imate",
-      title: "iMate",
-      subtitle: "AIエージェントサービス",
-      period: "2ヶ月",
-      url: "https://www.imate.site",
-      description: "AIエージェントベースのカスタマーサービスプラットフォーム。",
-      tech: ["React", "Node.js", "Python", "LLM"],
-      features: [
-        "AIチャットボット - LLMベースの自動応答システム",
-        "カスタマーサポート - 24/7自動対応",
-        "多言語対応",
-      ],
-      category: "ai",
-    },
+  // 사용자가 제공할 포트폴리오 데이터 (임시 구조)
+  const portfolioData: any[] = [
+    // 여기에 사용자가 제공하는 포트폴리오 데이터가 들어갑니다
   ];
 
   const categories = [
     { value: "all", label: "すべて" },
-    { value: "web", label: "Webプラットフォーム" },
-    { value: "ai", label: "AI/LLM" },
+    { value: "startup", label: "創業" },
+    { value: "development", label: "開発外注" },
+    { value: "marketing", label: "マーケティング外注" },
   ];
 
   const filteredProjects = filter === "all"
@@ -158,7 +44,7 @@ export default function PortfolioSection() {
           </h2>
           <div className="w-20 sm:w-24 h-1 bg-accent3 mx-auto mb-4 sm:mb-6"></div>
           <p className="text-base sm:text-lg text-accent2 font-mincho px-4">
-            開発プロジェクトポートフォリオ
+            創業・開発・マーケティング実績
           </p>
         </motion.div>
 

@@ -24,11 +24,11 @@ export default function HeroSection() {
           transition={{ delay: 0.2, duration: 0.8 }}
           className="mb-10 sm:mb-12"
         >
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-3 sm:mb-4 tracking-tight leading-tight">
-            Tei Youth
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-3 sm:mb-4 tracking-tight leading-tight font-mincho">
+            鄭允琇
           </h1>
-          <div className="text-accent1 text-xs sm:text-sm md:text-base tracking-widest">
-            蒼狐 | AOKITSUNE
+          <div className="text-accent1 text-base sm:text-lg md:text-xl tracking-wide">
+            Tei Youth | テイ・ユース
           </div>
         </motion.div>
 

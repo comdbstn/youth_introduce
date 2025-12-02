@@ -15,61 +15,62 @@ export default function WorksSection() {
     {
       year: "2020",
       activities: [
-        "TOWON 建築事務所インターン (2020.12 ~ 2021.02)",
-        "2020 Game Contest 入賞 (07)",
-        "2020 青少年ゲームジャムデザイン賞 (09)",
-        "Duoringgo 110 (11)",
+        "TOWON 建築事務所インターン",
+        "2020 Game Contest 入賞",
+        "2020 青少年ゲームジャムデザイン賞",
+        "Duoringgo 110",
       ],
-      majorProjects: [],
     },
     {
       year: "2021",
       activities: [
-        "高等学校卒業 (02)",
-        "大学入学 (03)",
-        "HOIT Connect (2021.01 ~ 2021.02)",
-        "2021 釜山インディコネクトフェスティバル (06)",
-        "ワードプロセッサ資格取得 (04)",
-        "ゲーム企画専門家資格取得 (08)",
+        "高等学校卒業",
+        "大学入学",
+        "HOIT Connect",
+        "2021 釜山インディコネクトフェスティバル",
+        "ワードプロセッサ資格取得",
+        "ゲーム企画専門家資格取得",
         "ウィズアカデミー不動産競売課程修了",
-        "ハンク不動産エデュ (財テク基礎班 / 開始スタディ修了)",
-        "SBSアカデミーゲーム企画 / プログラミング課程修了",
+        "ハンク不動産エデュ財テク基礎班修了",
+        "ハンク不動産エデュ開始スタディ修了",
+        "SBSアカデミーゲーム企画課程修了",
+        "SBSアカデミープログラミング課程修了",
       ],
-      majorProjects: [],
     },
     {
       year: "2022",
       activities: [
-        "毎日経済テスト優秀 (01)",
-        "ハンク不動産エデュ (法人活用投資 / 共有宿泊業月貸課程修了)",
+        "毎日経済テスト優秀",
+        "ハンク不動産エデュ法人活用投資課程修了",
+        "ハンク不動産エデュ共有宿泊業月貸課程修了",
         "梨花女子大学リーンスタートアップ課程修了",
         "ソウル大学校創業課程修了",
         "ソウル大学校青少年心理学課程修了",
-        "トバスタジオ企画 (2022.11 ~ 2023.02)",
-        "エムミーティングアイ (2022.12 ~ 2023.06)",
-        "About Meeting 社内理事 (2022.12 ~)",
-        "シャーエデュ創業 (2022.12)",
+        "トバスタジオ企画",
+        "エムミーティングアイ",
+        "About Meeting 社内理事",
+        "シャーエデュ創業",
       ],
-      majorProjects: [],
     },
     {
       year: "2023",
       activities: [
-        "UniTalk Studio 代表 (2023.01 ~ 2023.05)",
-        "クリエイティブトピック協業 (2023.01)",
-        "Rich MZ 講師 (2023.01 ~ 2023.02)",
-        "Mee'Bud 代表 (2023.02 ~ 2023.12)",
-        "GREIT 学会長 (2023.03 ~)",
+        "UniTalk Studio 代表",
+        "クリエイティブトピック協業",
+        "Rich MZ 講師",
+        "Mee'Bud 代表",
+        "GREIT 学会長",
         "MS Academy 講師",
         "ドリームボックス株式会社代表取締役",
         "オムイチンチク プロジェクト",
         "ソウル大学校ヘドンスタートアップ23期修了",
-        "ライフハッキングスクール (創業ブートキャンプ / リーダースピーチ / 知識創業課程修了)",
+        "ライフハッキングスクール創業ブートキャンプ修了",
+        "ライフハッキングスクールリーダースピーチ修了",
+        "ライフハッキングスクール知識創業課程修了",
         "Online Project-Based Software Development Camp 修了",
         "C#とUnityで作るゲーム開発シリーズ修了",
         "創業同好会スクワッド開発者パート参加",
       ],
-      majorProjects: [],
     },
     {
       year: "2024",
@@ -84,71 +85,12 @@ export default function WorksSection() {
         "襄陽DJフェスティバル行事総括",
         "KT&G 想像プラネットメンバー",
       ],
-      majorProjects: [
-        {
-          name: "無古 (Muko)",
-          description: "韓国の伝統を現代的に再解釈したブランディングプラットフォーム",
-          image: "/images/muko.jpg",
-        },
-        {
-          name: "自動車評価管理システム",
-          description: "自動車ディーラー向けの評価および在庫管理システム",
-          image: "/images/car-system.jpg",
-        },
-        {
-          name: "ピーターペット",
-          description: "ペット飼育管理およびコミュニティプラットフォーム",
-          image: "/images/peterpet.jpg",
-        },
-        {
-          name: "スタディタパ",
-          description: "学習グループマッチングプラットフォーム",
-          image: "/images/studytapa.jpg",
-        },
-        {
-          name: "BridgeMarketing",
-          description: "韓日ビジネスブリッジマーケティングエージェンシー",
-          image: "/images/bridgemarketing.jpg",
-        },
-      ],
     },
     {
       year: "2025",
       activities: [
         "ブリッジマーケティング上半期売上3500達成",
         "株式会社コバース代表取締役職受注",
-      ],
-      majorProjects: [
-        {
-          name: "DutyFree Price",
-          description: "免税品価格比較プラットフォーム",
-          image: "/images/dutyfree.jpg",
-        },
-        {
-          name: "Apex",
-          description: "プロジェクト管理及びチーム協業ツール",
-          image: "/images/apex.jpg",
-        },
-        {
-          name: "Podcaster",
-          description: "ポッドキャスト制作および配信プラットフォーム",
-          image: "/images/podcaster.jpg",
-        },
-        {
-          name: "Reportable",
-          description: "ビジネスレポート自動生成ツール",
-          image: "/images/reportable.jpg",
-        },
-        {
-          name: "DeepSol",
-          description: "AI基盤ソリューション開発プラットフォーム",
-          image: "/images/deepsol.jpg",
-        },
-        {
-          name: "Outta",
-          description: "アウトドアアクティビティ予約プラットフォーム",
-          image: "/images/outta.jpg",
-        },
       ],
     },
   ];
@@ -187,7 +129,6 @@ export default function WorksSection() {
                 key={item.year}
                 year={item.year}
                 activities={item.activities}
-                majorProjects={item.majorProjects}
                 index={index}
                 isInView={isInView}
               />
