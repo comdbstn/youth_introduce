@@ -6,6 +6,7 @@ import LoadingScreen from "@/components/ui/LoadingScreen";
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
 import WorksSection from "@/components/sections/WorksSection";
+import PortfolioSection from "@/components/sections/PortfolioSection";
 import ConnectSection from "@/components/sections/ConnectSection";
 
 export default function Home() {
@@ -24,6 +25,7 @@ export default function Home() {
           <HeroSection />
           <AboutSection />
           <WorksSection />
+          <PortfolioSection />
           <ConnectSection />
         </main>
       )}
