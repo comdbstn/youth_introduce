@@ -1,15 +1,32 @@
+"use client";
+
+import { useState } from "react";
+import { AnimatePresence } from "framer-motion";
+import LoadingScreen from "@/components/ui/LoadingScreen";
+import HeroSection from "@/components/sections/HeroSection";
+import AboutSection from "@/components/sections/AboutSection";
+import WorksSection from "@/components/sections/WorksSection";
+import ConnectSection from "@/components/sections/ConnectSection";
+
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
   return (
-    <main className="min-h-screen">
-      <section className="h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-6xl font-bold mb-4">Tei Youth</h1>
-          <p className="text-xl text-accent1 mb-2">Developer & Entrepreneur</p>
-          <p className="text-accent2 font-mincho">
-            動かなければ、アイデアはただの言葉だ。
-          </p>
-        </div>
-      </section>
-    </main>
+    <>
+      <AnimatePresence>
+        {isLoading && (
+          <LoadingScreen onLoadingComplete={() => setIsLoading(false)} />
+        )}
+      </AnimatePresence>
+
+      {!isLoading && (
+        <main className="min-h-screen">
+          <HeroSection />
+          <AboutSection />
+          <WorksSection />
+          <ConnectSection />
+        </main>
+      )}
+    </>
   );
 }

@@ -8,6 +8,16 @@
   --background-end-rgb: 28, 34, 51;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
@@ -16,10 +26,29 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+  overflow-x: hidden;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* カスタムスクロールバー */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1c2233;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #7ec8e3;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #d4af37;
 }
