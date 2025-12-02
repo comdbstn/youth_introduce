@@ -17,12 +17,12 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
           clearInterval(timer);
           setTimeout(() => {
             onLoadingComplete();
-          }, 500);
+          }, 300);
           return 100;
         }
-        return prev + 10;
+        return prev + 5;
       });
-    }, 100);
+    }, 80);
 
     return () => clearInterval(timer);
   }, [onLoadingComplete]);

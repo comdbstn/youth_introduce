@@ -6,7 +6,7 @@ import ScrollIndicator from "../ui/ScrollIndicator";
 
 export default function HeroSection() {
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-primary">
+    <section className="relative h-screen flex items-center justify-center overflow-hidden bg-primary w-full max-w-full">
       {/* 파티클 배경 애니메이션 */}
       <ParticleBackground />
 

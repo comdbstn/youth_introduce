@@ -27,11 +27,14 @@ export default function TimelineItem({
   const [hoveredProject, setHoveredProject] = useState<number | null>(null);
   const isEven = index % 2 === 0;
 
+  // 모바일 체크
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+
   return (
     <motion.div
-      initial={{ opacity: 0, x: isEven ? -30 : 30 }}
-      animate={isInView ? { opacity: 1, x: 0 } : {}}
-      transition={{ delay: index * 0.1, duration: 0.6 }}
+      initial={{ opacity: 0, y: isMobile ? 20 : 0, x: isMobile ? 0 : (isEven ? -30 : 30) }}
+      animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
+      transition={{ delay: Math.min(index * 0.15, 0.6), duration: 0.5, ease: "easeOut" }}
       className={`relative flex flex-col md:flex-row ${
         isEven ? "md:flex-row" : "md:flex-row-reverse"
       } items-center gap-6 sm:gap-8`}

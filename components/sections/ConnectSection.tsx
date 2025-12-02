@@ -32,7 +32,7 @@ export default function ConnectSection() {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen bg-primary py-16 sm:py-20 px-5 sm:px-6 md:px-8 flex items-center justify-center overflow-hidden"
+      className="relative min-h-screen bg-primary py-16 sm:py-20 px-5 sm:px-6 md:px-8 flex items-center justify-center overflow-hidden w-full max-w-full"
     >
       {/* 背景アニメーション */}
       <ParticleBackground />

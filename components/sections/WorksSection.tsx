@@ -7,7 +7,9 @@ import TimelineItem from "../ui/TimelineItem";
 
 export default function WorksSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: false, amount: 0.2 });
+  // 모바일에서는 더 적은 양만 보여도 애니메이션 시작
+  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
+  const isInView = useInView(sectionRef, { once: false, amount: isMobile ? 0.05 : 0.2 });
 
   const timelineData = [
     {
@@ -154,7 +156,7 @@ export default function WorksSection() {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen bg-gradient-to-b from-[#0a0e1a] to-primary py-16 sm:py-20 px-5 sm:px-6 md:px-8"
+      className="min-h-screen bg-gradient-to-b from-[#0a0e1a] to-primary py-16 sm:py-20 px-5 sm:px-6 md:px-8 w-full max-w-full overflow-hidden"
     >
       <div className="max-w-6xl mx-auto">
         {/* セクションタイトル */}

@@ -14,22 +14,25 @@ export default function AboutSection() {
   useEffect(() => {
     if (!sectionRef.current) return;
 
+    // 모바일 체크
+    const isMobile = window.innerWidth < 768;
+
     const elements = sectionRef.current.querySelectorAll(".gsap-fade-in");
 
     elements.forEach((element, index) => {
       gsap.fromTo(
         element,
-        { opacity: 0, y: 50 },
+        { opacity: 0, y: isMobile ? 20 : 50 },
         {
           opacity: 1,
           y: 0,
-          duration: 1,
-          delay: index * 0.2,
+          duration: isMobile ? 0.6 : 1,
+          delay: index * (isMobile ? 0.1 : 0.2),
           scrollTrigger: {
             trigger: element,
-            start: "top 80%",
-            end: "top 50%",
-            toggleActions: "play none none reverse",
+            start: isMobile ? "top 85%" : "top 80%",
+            end: isMobile ? "top 60%" : "top 50%",
+            toggleActions: "play none none none",
           },
         }
       );
@@ -71,7 +74,7 @@ export default function AboutSection() {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen bg-gradient-to-b from-primary to-[#0a0e1a] py-16 sm:py-20 px-5 sm:px-6 md:px-8"
+      className="min-h-screen bg-gradient-to-b from-primary to-[#0a0e1a] py-16 sm:py-20 px-5 sm:px-6 md:px-8 w-full max-w-full overflow-hidden"
     >
       <div className="max-w-6xl mx-auto">
         {/* ヘッドライン */}
