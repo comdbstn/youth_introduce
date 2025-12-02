@@ -32,15 +32,15 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
       initial={{ opacity: 1 }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5 }}
-      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-primary"
+      className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-primary px-6"
     >
       {/* ロゴ回転アニメーション */}
       <motion.div
         animate={{ rotate: 360 }}
         transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
-        className="mb-8"
+        className="mb-6 sm:mb-8"
       >
-        <div className="w-24 h-24 border-4 border-accent1 border-t-accent3 rounded-full"></div>
+        <div className="w-20 h-20 sm:w-24 sm:h-24 border-3 sm:border-4 border-accent1 border-t-accent3 rounded-full"></div>
       </motion.div>
 
       {/* ブランド名 */}
@@ -48,7 +48,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.8 }}
-        className="text-4xl font-bold text-white mb-2"
+        className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-2 text-center"
       >
         Tei Youth
       </motion.h1>
@@ -57,13 +57,13 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.4, duration: 0.8 }}
-        className="text-accent1 text-sm tracking-widest mb-8"
+        className="text-accent1 text-xs sm:text-sm tracking-widest mb-6 sm:mb-8 text-center"
       >
         蒼狐 | AOKITSUNE
       </motion.p>
 
       {/* プログレスバー */}
-      <div className="w-64 h-1 bg-white/10 rounded-full overflow-hidden">
+      <div className="w-56 sm:w-64 md:w-72 h-1 bg-white/10 rounded-full overflow-hidden">
         <motion.div
           initial={{ width: 0 }}
           animate={{ width: `${progress}%` }}
@@ -76,7 +76,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 0.6, duration: 0.8 }}
-        className="mt-4 text-accent2 text-sm"
+        className="mt-3 sm:mt-4 text-accent2 text-sm sm:text-base"
       >
         {progress}%
       </motion.p>

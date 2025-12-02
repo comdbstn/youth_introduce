@@ -15,19 +15,19 @@ export default function HeroSection() {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, ease: "easeOut" }}
-        className="relative z-10 text-center px-4"
+        className="relative z-10 text-center px-6 sm:px-8"
       >
         {/* 로고/심볼 영역 */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.2, duration: 0.8 }}
-          className="mb-8"
+          className="mb-10 sm:mb-12"
         >
-          <h1 className="text-7xl md:text-8xl font-bold text-white mb-2 tracking-tight">
+          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-3 sm:mb-4 tracking-tight leading-tight">
             Tei Youth
           </h1>
-          <div className="text-accent1 text-sm md:text-base tracking-widest">
+          <div className="text-accent1 text-xs sm:text-sm md:text-base tracking-widest">
             蒼狐 | AOKITSUNE
           </div>
         </motion.div>
@@ -37,9 +37,9 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5, duration: 1 }}
-          className="mb-6"
+          className="mb-8 sm:mb-10"
         >
-          <p className="text-2xl md:text-3xl text-accent1 font-haas tracking-wide">
+          <p className="text-xl sm:text-2xl md:text-3xl text-accent1 font-haas tracking-wide">
             Developer & Entrepreneur
           </p>
         </motion.div>
@@ -49,12 +49,12 @@ export default function HeroSection() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8, duration: 1 }}
-          className="max-w-2xl mx-auto"
+          className="max-w-2xl mx-auto px-2"
         >
-          <p className="text-lg md:text-xl text-accent2 font-mincho leading-relaxed">
+          <p className="text-base sm:text-lg md:text-xl text-accent2 font-mincho leading-relaxed">
             動かなければ、アイデアはただの言葉だ。
           </p>
-          <p className="text-sm md:text-base text-accent2/70 mt-2 italic">
+          <p className="text-xs sm:text-sm md:text-base text-accent2/70 mt-3 italic">
             Ideas mean nothing until they move.
           </p>
         </motion.div>

@@ -29,52 +29,55 @@ export default function TimelineItem({
 
   return (
     <motion.div
-      initial={{ opacity: 0, x: isEven ? -50 : 50 }}
+      initial={{ opacity: 0, x: isEven ? -30 : 30 }}
       animate={isInView ? { opacity: 1, x: 0 } : {}}
       transition={{ delay: index * 0.1, duration: 0.6 }}
       className={`relative flex flex-col md:flex-row ${
         isEven ? "md:flex-row" : "md:flex-row-reverse"
-      } items-center gap-8`}
+      } items-center gap-6 sm:gap-8`}
     >
       {/* コンテンツ */}
-      <div className={`flex-1 ${isEven ? "md:text-right" : "md:text-left"}`}>
+      <div className={`flex-1 w-full ${isEven ? "md:text-right" : "md:text-left"}`}>
         <div
-          className={`bg-white/5 backdrop-blur-sm border border-accent1/20 rounded-lg p-6 hover:border-accent1/50 transition-all duration-300`}
+          className={`bg-white/5 backdrop-blur-sm border border-accent1/20 rounded-lg p-4 sm:p-5 md:p-6 hover:border-accent1/50 transition-all duration-300`}
         >
-          <h3 className="text-3xl font-bold text-accent3 mb-4">{year}</h3>
+          <h3 className="text-2xl sm:text-3xl font-bold text-accent3 mb-3 sm:mb-4">{year}</h3>
 
           {/* アクティビティリスト */}
-          <ul className="space-y-2 mb-6">
+          <ul className="space-y-1.5 sm:space-y-2 mb-4 sm:mb-6">
             {activities.map((activity, idx) => (
               <li
                 key={idx}
-                className="text-accent2 text-sm md:text-base font-mincho flex items-start gap-2"
+                className="text-accent2 text-xs sm:text-sm md:text-base font-mincho flex items-start gap-2"
               >
-                <span className="text-accent1 mt-1">•</span>
-                <span>{activity}</span>
+                <span className="text-accent1 mt-1 flex-shrink-0">•</span>
+                <span className="flex-1">{activity}</span>
               </li>
             ))}
           </ul>
 
           {/* メジャープロジェクト */}
           {majorProjects.length > 0 && (
-            <div className="mt-6 pt-6 border-t border-accent1/20">
-              <h4 className="text-xl font-bold text-white mb-4">
+            <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-accent1/20">
+              <h4 className="text-lg sm:text-xl font-bold text-white mb-3 sm:mb-4">
                 Major Projects
               </h4>
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 sm:gap-3">
                 {majorProjects.map((project, projIdx) => (
                   <motion.div
                     key={projIdx}
                     onHoverStart={() => setHoveredProject(projIdx)}
                     onHoverEnd={() => setHoveredProject(null)}
+                    onTouchStart={() => setHoveredProject(projIdx)}
+                    onTouchEnd={() => setHoveredProject(null)}
                     whileHover={{ scale: 1.05 }}
-                    className="relative bg-white/10 rounded-lg p-4 cursor-pointer border border-accent3/30 hover:border-accent3 transition-all duration-300"
+                    whileTap={{ scale: 0.98 }}
+                    className="relative bg-white/10 rounded-lg p-3 sm:p-4 cursor-pointer border border-accent3/30 hover:border-accent3 active:border-accent3 transition-all duration-300 min-h-[80px] sm:min-h-[100px]"
                   >
-                    <h5 className="text-accent3 font-bold mb-2">
+                    <h5 className="text-sm sm:text-base text-accent3 font-bold mb-1.5 sm:mb-2">
                       {project.name}
                     </h5>
-                    <p className="text-accent2 text-sm font-mincho">
+                    <p className="text-accent2 text-xs sm:text-sm font-mincho leading-relaxed">
                       {project.description}
                     </p>
 

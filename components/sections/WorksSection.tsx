@@ -154,7 +154,7 @@ export default function WorksSection() {
   return (
     <section
       ref={sectionRef}
-      className="min-h-screen bg-gradient-to-b from-[#0a0e1a] to-primary py-20 px-4 md:px-8"
+      className="min-h-screen bg-gradient-to-b from-[#0a0e1a] to-primary py-16 sm:py-20 px-5 sm:px-6 md:px-8"
     >
       <div className="max-w-6xl mx-auto">
         {/* セクションタイトル */}
@@ -162,13 +162,13 @@ export default function WorksSection() {
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-20"
+          className="text-center mb-12 sm:mb-16 md:mb-20"
         >
-          <h2 className="text-5xl md:text-6xl font-bold text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight px-2">
             Works & Journey
           </h2>
-          <div className="w-24 h-1 bg-accent3 mx-auto mb-6"></div>
-          <p className="text-lg text-accent2 font-mincho">
+          <div className="w-20 sm:w-24 h-1 bg-accent3 mx-auto mb-4 sm:mb-6"></div>
+          <p className="text-base sm:text-lg text-accent2 font-mincho px-4">
             2020年から現在まで、私が歩んできた道のり
           </p>
         </motion.div>
@@ -179,7 +179,7 @@ export default function WorksSection() {
           <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-accent1 via-accent3 to-accent1 opacity-30"></div>
 
           {/* タイムラインアイテム */}
-          <div className="space-y-16">
+          <div className="space-y-8 sm:space-y-12 md:space-y-16">
             {timelineData.map((item, index) => (
               <TimelineItem
                 key={item.year}

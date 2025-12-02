@@ -62,8 +62,11 @@ export default function ParticleBackground() {
       }
     }
 
-    // 파티클 배열 생성
-    const particleCount = Math.floor((canvas.width * canvas.height) / 15000);
+    // 파티클 배열 생성 (모바일에서는 개수 감소)
+    const isMobile = window.innerWidth < 768;
+    const particleCount = Math.floor(
+      (canvas.width * canvas.height) / (isMobile ? 25000 : 15000)
+    );
     const particles: Particle[] = [];
     for (let i = 0; i < particleCount; i++) {
       particles.push(new Particle(canvas.width, canvas.height));
