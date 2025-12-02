@@ -10,21 +10,15 @@ export default function ConnectSection() {
 
   const socialLinks = [
     {
-      name: "LinkedIn",
-      icon: "💼",
-      url: "#",
-      description: "プロフェッショナルネットワーク",
-    },
-    {
-      name: "GitHub",
-      icon: "💻",
-      url: "#",
-      description: "開発プロジェクト",
+      name: "Instagram",
+      icon: "📸",
+      url: "https://www.instagram.com/tei.youth/",
+      description: "日常とインサイト",
     },
     {
       name: "Email",
       icon: "📧",
-      url: "mailto:contact@teiyouth.com",
+      url: "mailto:jys13230@gmail.com",
       description: "直接お問い合わせ",
     },
   ];
@@ -62,13 +56,15 @@ export default function ConnectSection() {
           className="mb-12 sm:mb-16 px-4"
         >
           <a
-            href="#"
+            href="https://line.me/ti/p/De3-6cw7W7"
+            target="_blank"
+            rel="noopener noreferrer"
             className="inline-block bg-gradient-to-r from-accent3 to-accent1 text-primary font-bold text-base sm:text-lg md:text-xl px-8 sm:px-10 md:px-12 py-4 sm:py-5 rounded-full hover:shadow-2xl hover:shadow-accent3/50 active:shadow-lg active:scale-95 transition-all duration-300 transform hover:scale-105 min-h-[56px] flex items-center justify-center"
           >
-            ☕ コーヒーチャットを予約する
+            💬 LINE 친구추가하기
           </a>
           <p className="mt-3 sm:mt-4 text-accent2/70 text-xs sm:text-sm">
-            Calendlyで簡単予約
+            いつでもお気軽にご連絡ください
           </p>
         </motion.div>
 
@@ -90,7 +86,7 @@ export default function ConnectSection() {
           <h3 className="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8">
             または、こちらからも
           </h3>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-5 md:gap-6 max-w-3xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-2xl mx-auto">
             {socialLinks.map((link, index) => (
               <motion.a
                 key={link.name}

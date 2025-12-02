@@ -10,6 +10,45 @@
 - **타겟**: 일본 비즈니스 파트너, 잠재 클라이언트, 네트워킹 참석자, 투자자
 - **핵심 가치**: "나는 누구이며, 무엇을 만들어왔고, 어떤 가치를 제공할 수 있는가"를 한 페이지에 직관적으로 전달
 - **브랜드 메시지**: 실행력 / 행동 / 변혁
+- **커리어 목표**: できるスタートアップを日本で再び設立することがキャリア的目標です。
+
+## 📋 수정 요청 사항
+
+### 1. About Section 수정
+- [ ] 커리어 목표 텍스트 추가: "できるスタートアップを日本で再び設立することがキャリア的目標です。"
+
+### 2. Core Values 섹션 대대적 수정
+#### 메인 카드 (3개 - 강조 디자인)
+- [ ] **AI 활용**
+  - 시장에 있는 거의 모든 AI 툴 및 Agent를 활용하여 업무공간을 최적화합니다.
+  - 이미지 포함
+
+- [ ] **開発 (개발)**
+  - 빠른 학습과 효율적인 라이브러리 활용으로, 웹/앱/SaaS/게임까지 모든 소프트웨어의 개발이 가능합니다.
+  - 이미지 포함
+
+- [ ] **マーケティング (마케팅)**
+  - スタートアップの마케팅 담당으로 시작하여, 법인 마케팅 운영사를 직접 운영하였습니다.
+  - 이미지 포함
+
+#### 보조 카드 (3개 - 작은 디자인)
+- [ ] **教育 (교육)**
+  - 부동산, AI 등 다양한 분야의 교육 경험
+
+- [ ] **チームリーダーシップ**
+  - 학회장, 대표이사 등 리더십 경험
+
+- [ ] **グローバル**
+  - 한일 비즈니스 브릿지 역할
+
+### 3. Connect Section 수정
+#### CTA 버튼
+- [ ] "コーヒーチャットを予約する" → "Line 친구추가하기"
+- [ ] URL: https://line.me/ti/p/De3-6cw7W7
+
+#### SNS 링크 (LinkedIn, GitHub 제거)
+- [ ] **Instagram**: https://www.instagram.com/tei.youth/
+- [ ] **Email**: jys13230@gmail.com
 
 ## 🛠 기술 스택
 
@@ -23,30 +62,23 @@
 
 ### Deployment
 - **Hosting**: Vercel
-- **Domain**: TBD
-- **Analytics**: Vercel Analytics
+- **URL**: https://youthintroduce-1anf8d7il-comdbstns-projects.vercel.app
+- **GitHub**: https://github.com/comdbstn/youth_introduce
 
-## 📁 프로젝트 구조
+## 📁 현재 페이지 구조
 
 ```
-tei-youth-landing/
-├── app/                    # Next.js App Router
-│   ├── layout.tsx         # 루트 레이아웃
-│   ├── page.tsx           # 메인 페이지
-│   └── globals.css        # 전역 스타일
-├── components/            # React 컴포넌트
-│   ├── sections/         # 섹션별 컴포넌트
-│   │   ├── HeroSection.tsx
-│   │   ├── AboutSection.tsx
-│   │   ├── WorksSection.tsx
-│   │   └── ConnectSection.tsx
-│   ├── ui/               # 재사용 가능한 UI 컴포넌트
-│   └── animations/       # 애니메이션 컴포넌트
-├── lib/                  # 유틸리티 함수
-├── public/              # 정적 파일
-│   ├── images/         # 이미지 파일
-│   └── fonts/          # 폰트 파일
-└── docs/               # 기획서 및 문서
+Hero Section
+  ↓
+About Section (스토리 + 커리어 목표)
+  ↓
+Core Values (메인 3개 + 보조 3개)
+  ↓
+Works Section (경력 타임라인 2020-2025)
+  ↓
+Portfolio Section (개발 프로젝트 10개)
+  ↓
+Connect Section (LINE 친구추가, Instagram, Email)
 ```
 
 ## 🎨 디자인 시스템
@@ -61,94 +93,6 @@ tei-youth-landing/
 - **영문**: Neue Haas Grotesk (모던하고 깔끔)
 - **일본어**: 游明朝体 (Yu Mincho) - 전통적이면서 읽기 편함
 - **한국어**: Pretendard 또는 Noto Sans KR
-
-### 디자인 철학
-- **Kanso (簡素)**: 불필요한 요소 제거, 명확한 메시지 전달
-- **Ma (間)**: 여백을 통한 호흡감과 시각적 여유
-- **Wabi-Sabi**: 완벽함보다는 진정성 있는 아름다움
-
-## 📄 페이지 섹션 구조
-
-### 1. Hero / Light Section
-- Tei Souta 로고 + 蒼狐(아오기츠네) 심볼
-- 캐치프레이즈: "Developer & Entrepreneur"
-- 서브텍스트: "動かなければ、アイデアはただの言葉だ。"
-- 푸른 빛 파티클 애니메이션
-- 스크롤 인디케이터
-
-### 2. About / Vision Section
-- 헤드라인: "From Seoul to Yokohama"
-- 스토리: 한국 창업가 → 일본 진출 → 비전
-- 핵심 가치 전달
-- 감각적 이미지 비주얼
-
-### 3. Works / Portfolio Section
-- 세로 연혁 스크롤링 형식
-- 2020년부터 2025년까지 프로젝트 타임라인
-- 호버 시 프로젝트 이미지 확대 및 세부 설명
-- 주요 성과 및 프로젝트 하이라이트
-
-### 4. Connect / Contact Section
-- 커피챗 예약 링크 (Calendly/Cal.com)
-- SNS 링크 (LinkedIn, GitHub, Email)
-- CTA 버튼: "Let's have a coffee chat"
-
-## 🚀 개발 로드맵
-
-### Phase 1: 기본 구조 (완료)
-- [x] Next.js 프로젝트 설정
-- [x] TailwindCSS 설정
-- [x] 기본 디렉토리 구조 생성
-- [x] Git 저장소 초기화
-
-### Phase 2: 섹션 구현 (진행 예정)
-- [ ] Hero Section 구현
-  - [ ] 로고 및 타이포그래피
-  - [ ] 파티클 애니메이션 (WebGL)
-  - [ ] 스크롤 인디케이터
-- [ ] About Section 구현
-  - [ ] 스토리 텍스트
-  - [ ] GSAP ScrollTrigger 애니메이션
-  - [ ] 이미지 레이아웃
-- [ ] Works Section 구현
-  - [ ] 타임라인 컴포넌트
-  - [ ] 프로젝트 카드
-  - [ ] 호버 인터랙션
-- [ ] Connect Section 구현
-  - [ ] CTA 버튼
-  - [ ] SNS 링크
-  - [ ] 배경 애니메이션
-
-### Phase 3: 애니메이션 & 인터랙션
-- [ ] Framer Motion 페이드인 효과
-- [ ] GSAP ScrollTrigger 스크롤 애니메이션
-- [ ] Parallax 효과
-- [ ] Text reveal 애니메이션
-- [ ] 호버 효과 및 트랜지션
-
-### Phase 4: 최적화 & 배포
-- [ ] 이미지 최적화 (WebP, lazy loading)
-- [ ] 모바일 반응형 테스트
-- [ ] 성능 최적화 (Lighthouse 점수 90+)
-- [ ] SEO 설정
-- [ ] Vercel 배포
-- [ ] 도메인 연결
-- [ ] Analytics 설정
-
-## 📱 모바일 최적화
-
-### 우선순위
-- **모바일 우선 설계**: 명함 QR 스캔 시 즉시 접속
-- **로딩 속도**: 3초 이내 First Contentful Paint
-- **반응형 디자인**: 모든 디바이스 최적화
-
-### 체크리스트
-- [ ] 모든 텍스트 최소 16px
-- [ ] 터치 타겟 최소 44x44px
-- [ ] 이미지 WebP 포맷, lazy loading
-- [ ] 모바일 스크롤 애니메이션 단순화
-- [ ] 3G 환경에서 5초 이내 로딩
-- [ ] 가로 모드 대응 (1280x720)
 
 ## 🔧 로컬 개발 환경 설정
 
@@ -174,25 +118,13 @@ npm start
 
 개발 서버: http://localhost:3000
 
-## 🌐 배포
+## 📊 현재 성능
 
-### Vercel 배포 가이드
-1. Vercel 계정으로 GitHub 저장소 연결
-2. 프로젝트 import
-3. 빌드 설정 자동 감지
-4. Deploy 버튼 클릭
-5. 도메인 설정 (선택사항)
-
-### 환경 변수
-현재 필요한 환경 변수 없음 (추후 Calendly API 등 추가 예정)
-
-## 📊 성능 목표
-
-- **First Contentful Paint**: < 3초
-- **Largest Contentful Paint**: < 3.5초
-- **Time to Interactive**: < 5초
-- **Cumulative Layout Shift**: < 0.1
-- **Lighthouse Score**: 90+ (Performance, Accessibility, Best Practices, SEO)
+- **First Load JS**: 192 kB
+- **Page Size**: 90.5 kB
+- **빌드 시간**: ~5초
+- **모바일 최적화**: 완료
+- **애니메이션 최적화**: 완료
 
 ## 📝 개발 규칙
 
@@ -203,19 +135,13 @@ npm start
 5. 시맨틱 HTML 사용
 6. TypeScript 타입 안정성 유지
 
-## 🔗 관련 링크
-
-- [Next.js 공식 문서](https://nextjs.org/docs)
-- [TailwindCSS 공식 문서](https://tailwindcss.com/docs)
-- [Framer Motion 공식 문서](https://www.framer.com/motion/)
-- [GSAP 공식 문서](https://greensock.com/docs/)
-
-## 📞 문의
+## 📞 연락처
 
 - **Developer**: Tei Youth
-- **Email**: TBD
-- **GitHub**: TBD
+- **Email**: jys13230@gmail.com
+- **Instagram**: https://www.instagram.com/tei.youth/
+- **LINE**: https://line.me/ti/p/De3-6cw7W7
 
 ---
 
-**Last Updated**: 2025-12-02
+**Last Updated**: 2025-12-03
