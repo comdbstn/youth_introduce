@@ -7,7 +7,7 @@ import PortfolioCard from "../ui/PortfolioCard";
 export default function PortfolioSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-  const isInView = useInView(sectionRef, { once: false, amount: isMobile ? 0.05 : 0.2 });
+  const isInView = useInView(sectionRef, { once: true, amount: isMobile ? 0.05 : 0.1 });
   const [filter, setFilter] = useState<string>("all");
 
   const portfolioData = [

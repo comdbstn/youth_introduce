@@ -29,7 +29,7 @@ export default function PortfolioCard({ project, index, isInView }: PortfolioCar
     <motion.div
       initial={{ opacity: 0, y: 20 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
-      transition={{ delay: Math.min(index * 0.1, 0.5), duration: 0.5 }}
+      transition={{ delay: Math.min(index * 0.05, 0.3), duration: 0.4 }}
       className="bg-white/5 backdrop-blur-sm border border-accent1/20 rounded-lg overflow-hidden hover:border-accent3/50 transition-all duration-300"
     >
       <div className="p-5 sm:p-6">
