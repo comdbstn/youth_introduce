@@ -34,19 +34,35 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
       transition={{ duration: 0.5 }}
       className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-primary px-6"
     >
-      {/* ロゴ画像アニメーション */}
+      {/* ロゴ画像アニメーション - グラデーションリング付き */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.8 }}
-        className="mb-6 sm:mb-8"
+        className="mb-6 sm:mb-8 relative"
       >
+        {/* 回転するグラデーションリング */}
+        <motion.div
+          animate={{ rotate: 360 }}
+          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+          className="absolute inset-0 w-32 h-32 sm:w-40 sm:h-40 rounded-full"
+          style={{
+            background: "conic-gradient(from 0deg, transparent 0%, #7EC8E3 25%, #D4AF37 50%, #7EC8E3 75%, transparent 100%)",
+            filter: "blur(8px)",
+          }}
+        />
+
+        {/* 内側の暗い円（背景） */}
+        <div className="absolute inset-2 bg-primary rounded-full z-10" />
+
+        {/* ロゴ画像（固定） */}
         <motion.img
           src="/loading.png"
           alt="Loading"
-          animate={{ rotate: 360 }}
-          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
-          className="w-24 h-24 sm:w-32 sm:h-32 object-contain"
+          className="w-24 h-24 sm:w-32 sm:h-32 object-contain relative z-20"
+          style={{
+            filter: "drop-shadow(0 0 20px rgba(126, 200, 227, 0.5))",
+          }}
         />
       </motion.div>
 

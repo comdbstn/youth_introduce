@@ -6,7 +6,7 @@ import ParticleBackground from "../animations/ParticleBackground";
 
 export default function ConnectSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: false, amount: 0.3 });
+  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
 
   const socialLinks = [
     {

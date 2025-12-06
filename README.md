@@ -55,6 +55,10 @@
 - [x] **총 37개 프로젝트**
 - [x] 페이지네이션 추가 (최대 6개 표시, "もっと見る" 버튼)
 - [x] 애니메이션 최적화
+- [x] 프로젝트 순서 재정렬:
+  - 창업: Korvus → AboutMeeting → BridgeMarketing → 기타
+  - 개발: Eden → Muko → BlueClub → 기타
+  - 마케팅: DJ축제 → GrandMasterClass → MUSINSA → 기타
 
 #### 7. Connect Section
 - [x] LINE 버튼: "LINE友達追加"
@@ -74,12 +78,11 @@
 ## 🛠 기술 스택
 
 ### Frontend
-- **Framework**: Next.js 15+ (App Router)
+- **Framework**: Next.js 16.0.7 (App Router, Turbopack)
 - **Language**: TypeScript
 - **Styling**: TailwindCSS
 - **Animation**:
   - Framer Motion (페이지 전환, 기본 애니메이션)
-  - GSAP + ScrollTrigger (스크롤 애니메이션)
 
 ### Deployment
 - **Hosting**: Vercel
@@ -97,7 +100,7 @@ Core Values (메인 3개 + 보조 3개)
   ↓
 Works Section (경력 타임라인 2020-2025)
   ↓
-Portfolio Section (개발 프로젝트 10개)
+Portfolio Section (총 37개 프로젝트 - 창업 15개, 개발 9개, 마케팅 13개)
   ↓
 Connect Section (LINE 친구추가, Instagram, Email)
 ```
@@ -165,4 +168,4 @@ npm start
 
 ---
 
-**Last Updated**: 2025-12-03
+**Last Updated**: 2025-12-06

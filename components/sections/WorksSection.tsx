@@ -9,7 +9,7 @@ export default function WorksSection() {
   const sectionRef = useRef<HTMLElement>(null);
   // 모바일에서는 더 적은 양만 보여도 애니메이션 시작
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-  const isInView = useInView(sectionRef, { once: false, amount: isMobile ? 0.05 : 0.2 });
+  const isInView = useInView(sectionRef, { once: true, amount: isMobile ? 0.05 : 0.2 });
 
   const timelineData = [
     {
