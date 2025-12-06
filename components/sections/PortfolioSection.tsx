@@ -7,7 +7,8 @@ import PortfolioCard from "../ui/PortfolioCard";
 export default function PortfolioSection() {
   const sectionRef = useRef<HTMLElement>(null);
   const isMobile = typeof window !== 'undefined' && window.innerWidth < 768;
-  const isInView = useInView(sectionRef, { once: true, amount: isMobile ? 0.05 : 0.1 });
+  // 모바일: 15%, PC: 20% 보일 때 애니메이션 시작 (너무 일찍 시작하지 않도록)
+  const isInView = useInView(sectionRef, { once: true, amount: isMobile ? 0.15 : 0.2 });
   const [filter, setFilter] = useState<string>("all");
   const [showAll, setShowAll] = useState<boolean>(false);
   const itemsPerPage = 6;

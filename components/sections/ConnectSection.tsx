@@ -6,7 +6,8 @@ import ParticleBackground from "../animations/ParticleBackground";
 
 export default function ConnectSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
+  // 모바일과 PC 모두 25%가 보일 때 애니메이션 시작
+  const isInView = useInView(sectionRef, { once: true, amount: 0.25 });
 
   const socialLinks = [
     {

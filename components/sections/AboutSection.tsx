@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
+  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -22,17 +22,18 @@ export default function AboutSection() {
     elements.forEach((element, index) => {
       gsap.fromTo(
         element,
-        { opacity: 0, y: isMobile ? 20 : 50 },
+        { opacity: 0, y: isMobile ? 15 : 30 },
         {
           opacity: 1,
           y: 0,
-          duration: isMobile ? 0.6 : 1,
-          delay: index * (isMobile ? 0.1 : 0.2),
+          duration: isMobile ? 0.5 : 0.8,
+          delay: index * 0.1,
+          ease: "power2.out",
           scrollTrigger: {
             trigger: element,
-            start: isMobile ? "top 85%" : "top 80%",
-            end: isMobile ? "top 60%" : "top 50%",
+            start: isMobile ? "top 90%" : "top 75%",
             toggleActions: "play none none none",
+            once: true,
           },
         }
       );
