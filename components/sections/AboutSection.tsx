@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: false, amount: 0.3 });
+  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
   useEffect(() => {
     if (!sectionRef.current) return;
@@ -124,6 +124,9 @@ export default function AboutSection() {
             </p>
             <p className="text-base sm:text-lg md:text-xl text-accent2 leading-relaxed mb-5 sm:mb-6 font-mincho">
               マーケティング代理店Bridge Marketingの代表取締役として2年間在職しました。
+            </p>
+            <p className="text-base sm:text-lg md:text-xl text-accent2 leading-relaxed mb-5 sm:mb-6 font-mincho">
+              日本事業に備えてKorvus Inc法人を設立して2ヶ月目運営中です。
             </p>
             <p className="text-base sm:text-lg md:text-xl text-accent2 leading-relaxed mb-5 sm:mb-6 font-mincho">
               大学在学中から複数のプロジェクトを立ち上げ、ウェブ開発とビジネス経営の両方のスキルを磨いてきました。「動かなければ、アイデアはただ言葉だ」という信念のもと、常に実行を重視しています。

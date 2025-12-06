@@ -34,13 +34,20 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
       transition={{ duration: 0.5 }}
       className="fixed inset-0 z-50 flex flex-col items-center justify-center bg-primary px-6"
     >
-      {/* ロゴ回転アニメーション */}
+      {/* ロゴ画像アニメーション */}
       <motion.div
-        animate={{ rotate: 360 }}
-        transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8 }}
         className="mb-6 sm:mb-8"
       >
-        <div className="w-20 h-20 sm:w-24 sm:h-24 border-3 sm:border-4 border-accent1 border-t-accent3 rounded-full"></div>
+        <motion.img
+          src="/loading.png"
+          alt="Loading"
+          animate={{ rotate: 360 }}
+          transition={{ duration: 3, repeat: Infinity, ease: "linear" }}
+          className="w-24 h-24 sm:w-32 sm:h-32 object-contain"
+        />
       </motion.div>
 
       {/* ブランド名 */}
@@ -62,15 +69,6 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
           className="h-full bg-gradient-to-r from-accent1 to-accent3"
         ></motion.div>
       </div>
-
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.6, duration: 0.8 }}
-        className="mt-3 sm:mt-4 text-accent2 text-sm sm:text-base"
-      >
-        {progress}%
-      </motion.p>
     </motion.div>
   );
 }
