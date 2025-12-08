@@ -14,6 +14,37 @@
 
 ## ✅ 완료된 수정 사항
 
+### 2025-12-09 업데이트
+
+#### 11. Portfolio 이미지 갤러리
+- [x] 포트폴리오 이미지 시스템 구축
+  - `public/portfolio/business/` 폴더에 15개 창업 프로젝트 이미지 저장
+  - 각 프로젝트 폴더에 이미지 및 link.txt 파일 포함
+- [x] 이미지 갤러리 UI
+  - "詳細を見る" 클릭 시 2열 그리드로 이미지 표시
+  - 호버 효과: 확대(scale-110) + 🔍 아이콘
+  - 스태거 애니메이션 (0.1s 딜레이)
+- [x] **이미지 확대 모달**
+  - 이미지 클릭 시 전체화면 모달로 확대
+  - AnimatePresence로 부드러운 등장/퇴장
+  - Spring 애니메이션 (damping: 25)
+  - 배경 클릭 또는 X 버튼으로 닫기
+  - z-index [100]으로 최상위 레이어
+- [x] 마케팅 포트폴리오 보안 메시지
+  - category === "marketing"일 때 하단에 메시지 표시
+  - "*マーケティングポートフォリオはセキュリティポリシー上、画像を添付しておりません。"
+
+#### 12. Portfolio 프로젝트 순서 조정
+- [x] GREIT ↔ エムミーティングアイ 순서 변경
+  - GREIT가 エムミーティングアイ 앞으로 이동
+- [x] Airbnb大阪西成区 ↔ SyaEducation 순서 변경
+  - Airbnb가 창업 섹션 상위로 이동
+  - SyaEducation이 하위로 이동
+
+#### 13. Portfolio URL 추가
+- [x] AboutMeeting: https://swweetter.ai/
+- [x] GrandMasterClass: https://www.instagram.com/grandmasterclass/
+
 ### 2025-12-06 업데이트
 
 #### 1. Hero Section
@@ -186,4 +217,4 @@ npm start
 
 ---
 
-**Last Updated**: 2025-12-06
+**Last Updated**: 2025-12-09
