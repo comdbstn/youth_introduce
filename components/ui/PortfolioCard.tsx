@@ -14,6 +14,7 @@ interface PortfolioProject {
   features?: string[];
   achievements?: string[];
   category: string;
+  images?: string[];
 }
 
 interface PortfolioCardProps {
@@ -126,6 +127,30 @@ export default function PortfolioCard({ project, index, isInView }: PortfolioCar
           className="overflow-hidden"
         >
           <div className="pt-4 border-t border-accent1/20 mt-4">
+            {/* イメージギャラリー */}
+            {project.images && project.images.length > 0 && (
+              <div className="mb-4">
+                <p className="text-sm font-bold text-white mb-3">プロジェクト画像:</p>
+                <div className="grid grid-cols-2 gap-2 sm:gap-3">
+                  {project.images.map((image, idx) => (
+                    <motion.div
+                      key={idx}
+                      initial={{ opacity: 0, scale: 0.9 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      transition={{ delay: idx * 0.1 }}
+                      className="relative aspect-video rounded-lg overflow-hidden border border-accent1/20 hover:border-accent3/50 transition-all cursor-pointer group"
+                    >
+                      <img
+                        src={image}
+                        alt={`${project.title} - Image ${idx + 1}`}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"
+                      />
+                    </motion.div>
+                  ))}
+                </div>
+              </div>
+            )}
+
             {project.features && (
               <div className="mb-4">
                 <p className="text-sm font-bold text-white mb-2">主な機能:</p>

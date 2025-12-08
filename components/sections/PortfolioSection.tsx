@@ -28,6 +28,9 @@ export default function PortfolioSection() {
         "マーケティング - 総合マーケティングサービス",
         "日本事業 - 日本市場進出準備",
       ],
+      images: [
+        "/portfolio/business/1. korvus inc/korvus_inc_1.jpg",
+      ],
       category: "startup",
     },
     {
@@ -35,13 +38,17 @@ export default function PortfolioSection() {
       title: "AboutMeeting",
       subtitle: "暗闇お見合いサービス",
       period: "約1年半",
-      url: "",
+      url: "https://swweetter.ai/",
       description: "ソウル大学校創業サークルから始まったプロジェクト。映画「アバウトタイム」からインスピレーションを受けた暗闇お見合いサービス。マーケティング、企画、店舗管理、開発などすべての領域を担当。",
       tech: ["マーケティング", "企画", "店舗管理", "開発"],
       features: [
         "暗闇お見合いコンセプト - 映画「アバウトタイム」着想",
         "オフライン店舗運営 - 約1年半運営",
         "統合運営 - マーケティング、企画、開発すべて担当",
+      ],
+      images: [
+        "/portfolio/business/2. AboutMeeting/KakaoTalk_20251209_040017657.jpg",
+        "/portfolio/business/2. AboutMeeting/KakaoTalk_20251209_040110785.jpg",
       ],
       category: "startup",
     },
