@@ -1,48 +1,11 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-
-gsap.registerPlugin(ScrollTrigger);
 
 export default function AboutSection() {
   const sectionRef = useRef<HTMLElement>(null);
-  const isInView = useInView(sectionRef, { once: true, amount: 0.3 });
-
-  useEffect(() => {
-    if (!sectionRef.current) return;
-
-    // 모바일 체크
-    const isMobile = window.innerWidth < 768;
-
-    const elements = sectionRef.current.querySelectorAll(".gsap-fade-in");
-
-    elements.forEach((element, index) => {
-      gsap.fromTo(
-        element,
-        { opacity: 0, y: isMobile ? 15 : 30 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: isMobile ? 0.5 : 0.8,
-          delay: index * 0.1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: element,
-            start: isMobile ? "top 90%" : "top 75%",
-            toggleActions: "play none none none",
-            once: true,
-          },
-        }
-      );
-    });
-
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
-    };
-  }, []);
+  const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
   // メインカード（大きく強調されたカード）
   const mainValues = [
@@ -99,24 +62,25 @@ export default function AboutSection() {
       <div className="max-w-6xl mx-auto">
         {/* ヘッドライン */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.5 }}
           className="text-center mb-12 sm:mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 gsap-fade-in leading-tight px-2">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight px-2">
             From Seoul to Yokohama
           </h2>
-          <div className="w-20 sm:w-24 h-1 bg-accent1 mx-auto gsap-fade-in"></div>
+          <div className="w-20 sm:w-24 h-1 bg-accent1 mx-auto"></div>
         </motion.div>
 
         {/* ストーリー */}
-        <div className="mb-16 sm:mb-20">
-          <motion.div
-            className="prose prose-invert max-w-none gsap-fade-in"
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-          >
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          className="mb-16 sm:mb-20"
+        >
+          <div className="prose prose-invert max-w-none">
             <p className="text-base sm:text-lg md:text-xl text-accent2 leading-relaxed mb-5 sm:mb-6 font-mincho">
               韓国で創業者としてスタートし、現在は横浜でのビジネス展開を計画しています。
             </p>
@@ -135,11 +99,15 @@ export default function AboutSection() {
             <p className="text-base sm:text-lg md:text-xl text-accent3 leading-relaxed font-mincho font-bold">
               プロジェクト外注を通じた売上で日本で定着し、長期的には正常に向かうことができるスタートアップを日本で再び設立することがキャリア的目標です。
             </p>
-          </motion.div>
-        </div>
+          </div>
+        </motion.div>
 
         {/* コアバリュー */}
-        <div className="gsap-fade-in">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5, delay: 0.2 }}
+        >
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-8 sm:mb-12 text-center">
             Core Values
           </h3>
@@ -151,7 +119,7 @@ export default function AboutSection() {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: index * 0.15, duration: 0.6 }}
+                transition={{ delay: 0.3 + index * 0.1, duration: 0.4 }}
                 className={`bg-gradient-to-br ${value.gradient} backdrop-blur-sm border-2 border-accent3/40 rounded-xl p-6 sm:p-8 hover:border-accent3 hover:shadow-2xl hover:shadow-accent3/20 transition-all duration-300 hover:transform hover:scale-105 active:scale-100 relative overflow-hidden group`}
               >
                 {/* 背景装飾 */}
@@ -187,7 +155,7 @@ export default function AboutSection() {
                 key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.45 + index * 0.1, duration: 0.5 }}
+                transition={{ delay: 0.6 + index * 0.1, duration: 0.4 }}
                 className="bg-white/5 backdrop-blur-sm border border-accent1/20 rounded-lg p-4 sm:p-5 hover:border-accent1/50 transition-all duration-300 hover:transform hover:scale-105 active:scale-100"
               >
                 {/* アイコン */}
@@ -212,7 +180,7 @@ export default function AboutSection() {
               </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

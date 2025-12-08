@@ -36,25 +36,27 @@ export default function PortfolioCard({ project, index, isInView }: PortfolioCar
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
+            transition={{ duration: 0.2 }}
             onClick={() => setSelectedImage(null)}
-            className="fixed inset-0 z-[100] bg-black/90 flex items-center justify-center p-4 cursor-zoom-out"
+            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-2 sm:p-4 md:p-6 cursor-zoom-out overflow-hidden"
           >
             <motion.div
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              exit={{ scale: 0.8 }}
-              transition={{ type: "spring", damping: 25 }}
-              className="relative max-w-7xl max-h-[90vh] w-full"
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="relative w-full h-full max-w-7xl max-h-[95vh] flex items-center justify-center"
               onClick={(e) => e.stopPropagation()}
             >
               <img
                 src={selectedImage}
                 alt="Expanded view"
-                className="w-full h-full object-contain rounded-lg"
+                className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg"
               />
               <button
                 onClick={() => setSelectedImage(null)}
-                className="absolute top-4 right-4 w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white text-2xl transition-colors"
+                className="absolute top-2 right-2 sm:top-4 sm:right-4 w-8 h-8 sm:w-10 sm:h-10 bg-white/10 hover:bg-white/20 active:bg-white/30 backdrop-blur-sm rounded-full flex items-center justify-center text-white text-xl sm:text-2xl transition-colors touch-manipulation"
+                aria-label="Close"
               >
                 ×
               </button>
