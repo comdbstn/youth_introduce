@@ -102,6 +102,10 @@ export default function PortfolioSection() {
         "メイン講師 - 不動産投資教育",
         "講師招聘 - 有名不動産専門家招待",
       ],
+      images: [
+        "/portfolio/business/8. GREIT/KakaoTalk_20251209_040748060.png",
+        "/portfolio/business/8. GREIT/KakaoTalk_20251209_040919429.jpg",
+      ],
       category: "startup",
     },
     {
@@ -117,6 +121,9 @@ export default function PortfolioSection() {
         "売上 300万ウォン",
         "純利益率 99%",
       ],
+      images: [
+        "/portfolio/business/5. エムミーティングアイ/KakaoTalk_20251209_035929318.jpg",
+      ],
       category: "startup",
     },
     {
@@ -130,6 +137,12 @@ export default function PortfolioSection() {
       achievements: [
         "投資金 1500万ウォン",
         "月売上 600万ウォン達成",
+      ],
+      images: [
+        "/portfolio/business/15. Airbnb大阪西成区/KakaoTalk_20251209_043150344.jpg",
+        "/portfolio/business/15. Airbnb大阪西成区/KakaoTalk_20251209_043204777.jpg",
+        "/portfolio/business/15. Airbnb大阪西成区/KakaoTalk_20251209_043215241.jpg",
+        "/portfolio/business/15. Airbnb大阪西成区/KakaoTalk_20251209_043246749.jpg",
       ],
       category: "startup",
     },
@@ -146,6 +159,10 @@ export default function PortfolioSection() {
         "出演チーム - 出演者管理",
         "企画チーム - コンテンツ企画",
       ],
+      images: [
+        "/portfolio/business/7. UnitalkStudio/KakaoTalk_20251209_040645200.jpg",
+        "/portfolio/business/7. UnitalkStudio/KakaoTalk_20251209_040717703.jpg",
+      ],
       category: "startup",
     },
     {
@@ -160,6 +177,10 @@ export default function PortfolioSection() {
         "日韓マッチング - 国際カップル誕生",
         "多言語対応 - 日本語・韓国語",
         "MVPテスト - 1ヶ月試験運営",
+      ],
+      images: [
+        "/portfolio/business/9. Mee'Bud/KakaoTalk_20251209_041309020.png",
+        "/portfolio/business/9. Mee'Bud/introduce ジャパン.svg",
       ],
       category: "startup",
     },
@@ -179,6 +200,9 @@ export default function PortfolioSection() {
       achievements: [
         "代表取締役 3年間在職",
         "月売上1000万ウォン達成",
+      ],
+      images: [
+        "/portfolio/business/10. ドリームボックス株式会社/사업자등록증 1 (2)_page-0001.jpg",
       ],
       category: "startup",
     },
@@ -209,6 +233,10 @@ export default function PortfolioSection() {
         "会長活動 - サークル運営及び管理",
         "代表講師 - 創業教育",
         "目標設定 - 月10万ウォン収益化",
+      ],
+      images: [
+        "/portfolio/business/12. 創空/KakaoTalk_20251209_041655957.png",
+        "/portfolio/business/12. 創空/KakaoTalk_20251209_042358184.jpg",
       ],
       category: "startup",
     },
@@ -486,6 +514,10 @@ export default function PortfolioSection() {
         "最上位圏大学生講師 - ソウル大、延世大、高麗大等",
         "グループ授業 - 効率的な学習",
         "MVPテスト - 1ヶ月試験運営",
+      ],
+      images: [
+        "/portfolio/business/6. SyaEducation/KakaoTalk_20251209_035847643.png",
+        "/portfolio/business/6. SyaEducation/KakaoTalk_20251209_035856370.png",
       ],
       category: "startup",
     },
