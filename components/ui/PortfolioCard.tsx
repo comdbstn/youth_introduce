@@ -38,20 +38,26 @@ export default function PortfolioCard({ project, index, isInView }: PortfolioCar
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
             onClick={() => setSelectedImage(null)}
-            className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-2 sm:p-4 md:p-6 cursor-zoom-out overflow-hidden"
+            className="fixed top-0 left-0 right-0 bottom-0 z-[100] bg-black flex items-center justify-center p-2 sm:p-4 md:p-6 cursor-zoom-out"
+            style={{
+              width: '100vw',
+              height: '100dvh',
+              touchAction: 'none'
+            }}
           >
             <motion.div
               initial={{ scale: 0.9, opacity: 0 }}
               animate={{ scale: 1, opacity: 1 }}
               exit={{ scale: 0.9, opacity: 0 }}
               transition={{ duration: 0.2 }}
-              className="relative w-full h-full max-w-7xl max-h-[95vh] flex items-center justify-center"
+              className="relative w-full h-full max-w-7xl flex items-center justify-center"
               onClick={(e) => e.stopPropagation()}
             >
               <img
                 src={selectedImage}
                 alt="Expanded view"
                 className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg"
+                style={{ maxHeight: 'calc(100dvh - 4rem)' }}
               />
               <button
                 onClick={() => setSelectedImage(null)}
