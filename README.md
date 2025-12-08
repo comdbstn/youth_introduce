@@ -24,14 +24,16 @@
 - [x] "鄭允琇"로 변경
 - [x] "蒼狐 | AOKITSUNE" 삭제
 - [x] % 표시 삭제
-- [x] 로딩 이미지 추가 (loading.png, 회전 애니메이션)
+- [x] 로딩 이미지 추가 (loading.png, 투명 배경)
+- [x] 세련된 그라데이션 링 애니메이션 (Cyan → Gold 회전)
+- [x] 이미지와 링 중앙 정렬 최적화
 
 #### 3. About Section
 - [x] 커리어 목표 추가: "できるスタートアップを日本で再び設立することがキャリア的目標です。"
 - [x] DreamBox 경력 추가: "ウェブ開発及びSaaS、AiAgentを開発するDreamBox株式会社の代表取締役として3年間在職しました。"
 - [x] BridgeMarketing 경력 추가: "マーケティング代理店Bridge Marketingの代表取締役として2年間在職しました。"
 - [x] Korvus Inc 추가: "日本事業に備えてKorvus Inc法人を設立して2ヶ月目運営中です。"
-- [x] 애니메이션 오류 수정 (once: true로 변경)
+- [x] 애니메이션 오류 수정 (GSAP once: true, 최적화된 타이밍)
 
 #### 4. Core Values Section
 - [x] 메인 카드 3개 (큰 디자인):
@@ -54,11 +56,15 @@
 - [x] 마케팅외주 프로젝트: 13개
 - [x] **총 37개 프로젝트**
 - [x] 페이지네이션 추가 (최대 6개 표시, "もっと見る" 버튼)
-- [x] 애니메이션 최적화
+- [x] 애니메이션 최적화 (스크롤 트리거 개선)
 - [x] 프로젝트 순서 재정렬:
   - 창업: Korvus → AboutMeeting → BridgeMarketing → 기타
   - 개발: Eden → Muko → BlueClub → 기타
   - 마케팅: DJ축제 → GrandMasterClass → MUSINSA → 기타
+- [x] **카테고리 변경 애니메이션**: AnimatePresence로 부드러운 전환
+  - Exit: 페이드 아웃 + 위로 슬라이드
+  - Enter: 페이드 인 + 아래로 슬라이드
+  - 카드별 스태거 + 스케일 효과
 
 #### 7. Connect Section
 - [x] LINE 버튼: "LINE友達追加"
@@ -71,7 +77,17 @@
 - [x] Floating Contact 버튼 추가 (우측 하단 고정)
 - [x] 모바일 최적화 완료
 
-#### 9. 기술 업데이트
+#### 9. 애니메이션 통합 최적화
+- [x] 모든 섹션 `once: true` 설정 (재생 방지)
+- [x] 스크롤 트리거 `amount` 값 최적화:
+  - AboutSection: 0.3 (PC), GSAP once: true
+  - WorksSection: 0.05 (모바일), 0.2 (PC)
+  - PortfolioSection: 0.15 (모바일), 0.2 (PC)
+  - ConnectSection: 0.25 (모바일/PC)
+- [x] 애니메이션 duration/delay 단축으로 부드러운 재생
+- [x] 끊김 및 중간부터 재생되는 문제 해결
+
+#### 10. 기술 업데이트
 - [x] Next.js 16.0.7로 업데이트 (보안 취약점 해결)
 - [x] Turbopack 활성화
 
@@ -144,11 +160,13 @@ npm start
 
 ## 📊 현재 성능
 
-- **First Load JS**: 192 kB
-- **Page Size**: 90.5 kB
-- **빌드 시간**: ~5초
-- **모바일 최적화**: 완료
-- **애니메이션 최적화**: 완료
+- **First Load JS**: ~192 kB
+- **Page Size**: ~90.5 kB
+- **빌드 시간**: ~3초 (Turbopack)
+- **모바일 최적화**: ✅ 완료
+- **애니메이션 최적화**: ✅ 완료
+- **스크롤 성능**: ✅ 부드러운 60fps
+- **카테고리 전환**: ✅ AnimatePresence 사용
 
 ## 📝 개발 규칙
 
