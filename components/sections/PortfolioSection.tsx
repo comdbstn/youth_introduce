@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
-import { motion, useInView } from "framer-motion";
+import { motion, useInView, AnimatePresence } from "framer-motion";
 import PortfolioCard from "../ui/PortfolioCard";
 
 export default function PortfolioSection() {
@@ -579,16 +579,25 @@ export default function PortfolioSection() {
         </motion.div>
 
         {/* プロジェクトグリッド */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8">
-          {displayedProjects.map((project, index) => (
-            <PortfolioCard
-              key={project.id}
-              project={project}
-              index={index}
-              isInView={isInView}
-            />
-          ))}
-        </div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={filter}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-8"
+          >
+            {displayedProjects.map((project, index) => (
+              <PortfolioCard
+                key={project.id}
+                project={project}
+                index={index}
+                isInView={true}
+              />
+            ))}
+          </motion.div>
+        </AnimatePresence>
 
         {/* もっと見るボタン */}
         {hasMore && (
