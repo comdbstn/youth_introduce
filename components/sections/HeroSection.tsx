@@ -40,7 +40,7 @@ export default function HeroSection() {
           className="mb-8 sm:mb-10"
         >
           <p className="text-xl sm:text-2xl md:text-3xl text-accent1 font-haas tracking-wide">
-            Developer & Entrepreneur
+            Full-Stack Developer
           </p>
         </motion.div>
 

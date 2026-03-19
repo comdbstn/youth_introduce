@@ -26,7 +26,7 @@ export default function AboutSection() {
     {
       title: "マーケティング",
       subtitle: "Marketing",
-      description: "スタートアップのマーケティング担当から始まり、法人マーケティング運営会社を直接運営しました。",
+      description: "SNS・SEO・広告運用まで、データドリブンなマーケティング戦略の立案と実行経験があります。",
       icon: "📊",
       gradient: "from-cyan-500/20 to-green-500/20",
     },
@@ -43,13 +43,13 @@ export default function AboutSection() {
     {
       title: "チームリーダーシップ",
       subtitle: "Team Leadership",
-      description: "学会長、代表理事等リーダーシップ経験",
+      description: "プロジェクトリーダー・チーム統括の実務経験",
       icon: "👥",
     },
     {
       title: "グローバル",
       subtitle: "Global",
-      description: "韓日ビジネスブリッジの役割",
+      description: "韓国語・日本語・英語でのコミュニケーション",
       icon: "🌏",
     },
   ];
@@ -82,22 +82,19 @@ export default function AboutSection() {
         >
           <div className="prose prose-invert max-w-none">
             <p className="text-base sm:text-lg md:text-xl text-accent2 leading-relaxed mb-5 sm:mb-6 font-mincho">
-              韓国で創業者としてスタートし、現在は横浜でのビジネス展開を計画しています。
+              韓国でウェブ開発キャリアをスタートし、現在は横浜を拠点に活動しているフルスタック開発者です。
             </p>
             <p className="text-base sm:text-lg md:text-xl text-accent2 leading-relaxed mb-5 sm:mb-6 font-mincho">
-              ウェブ開発及びSaaS、AiAgentを開発するDreamBox株式会社の代表取締役として3年間在職しました。
+              DreamBox株式会社にてSaaS・AIエージェントの開発を3年間リードし、設計からデプロイまでの全工程を担当しました。
             </p>
             <p className="text-base sm:text-lg md:text-xl text-accent2 leading-relaxed mb-5 sm:mb-6 font-mincho">
-              マーケティング代理店Bridge Marketingの代表取締役として2年間在職しました。
+              Bridge Marketingではウェブサービスの技術基盤を2年間構築し、10以上のプロジェクトを納品しました。
             </p>
             <p className="text-base sm:text-lg md:text-xl text-accent2 leading-relaxed mb-5 sm:mb-6 font-mincho">
-              日本事業に備えてKorvus Inc法人を設立して2ヶ月目運営中です。
-            </p>
-            <p className="text-base sm:text-lg md:text-xl text-accent2 leading-relaxed mb-5 sm:mb-6 font-mincho">
-              大学在学中から複数のプロジェクトを立ち上げ、ウェブ開発とビジネス経営の両方のスキルを磨いてきました。「動かなければ、アイデアはただ言葉だ」という信念のもと、常に実行を重視しています。
+              大学在学中から複数のプロジェクトに携わり、開発・企画・チームマネジメントの実務経験を積んできました。
             </p>
             <p className="text-base sm:text-lg md:text-xl text-accent3 leading-relaxed font-mincho font-bold">
-              プロジェクト外注を通じた売上で日本で定着し、長期的には正常に向かうことができるスタートアップを日本で再び設立することがキャリア的目標です。
+              「動かなければ、アイデアはただの言葉だ」という信念のもと、常に実行を重視し、チームと共にプロダクトを成長させることにやりがいを感じています。
             </p>
           </div>
         </motion.div>

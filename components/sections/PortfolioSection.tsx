@@ -21,7 +21,7 @@ export default function PortfolioSection() {
       subtitle: "ソフトウェア供給/マーケティング法人",
       period: "",
       url: "",
-      description: "ソフトウェア供給及びマーケティング法人。日本事業を念頭に設立。",
+      description: "ソフトウェア供給及びマーケティング法人。日本市場向けソリューション提供。",
       tech: ["ソフトウェア供給", "マーケティング", "国際事業"],
       features: [
         "ソフトウェア供給 - 各種ソリューション提供",
@@ -190,7 +190,7 @@ export default function PortfolioSection() {
       subtitle: "Eコマース最適化ソリューション",
       period: "3年",
       url: "",
-      description: "韓国ショッピングモール「クーパン」上位露出ロジックを開発及び販売。Web開発及びSaaS、AIエージェント開発。代表取締役として3年間在職。",
+      description: "韓国ECプラットフォーム「クーパン」上位露出ロジック開発。Web開発・SaaS・AIエージェント開発を3年間リード。",
       tech: ["SaaS", "AI Agent", "Web開発", "Eコマース最適化"],
       features: [
         "クーパン最適化 - 上位露出ロジック開発",
@@ -555,9 +555,9 @@ export default function PortfolioSection() {
 
   const categories = [
     { value: "all", label: "すべて" },
-    { value: "startup", label: "創業" },
-    { value: "development", label: "開発外注" },
-    { value: "marketing", label: "マーケティング外注" },
+    { value: "startup", label: "事業実績" },
+    { value: "development", label: "開発実績" },
+    { value: "marketing", label: "マーケティング実績" },
   ];
 
   const filteredProjects = filter === "all"
@@ -588,7 +588,7 @@ export default function PortfolioSection() {
           </h2>
           <div className="w-20 sm:w-24 h-1 bg-accent3 mx-auto mb-4 sm:mb-6"></div>
           <p className="text-base sm:text-lg text-accent2 font-mincho px-4">
-            創業・開発・マーケティング実績
+            事業・開発・マーケティング実績
           </p>
         </motion.div>
 
