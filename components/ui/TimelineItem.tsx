@@ -1,10 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
+import type { TimelineActivity } from "@/lib/content/types";
 
 interface TimelineItemProps {
   year: string;
-  activities: string[];
+  activities: TimelineActivity[];
   index: number;
   isInView: boolean;
 }
@@ -38,15 +39,28 @@ export default function TimelineItem({
 
           {/* アクティビティリスト */}
           <ul className="space-y-1.5 sm:space-y-2">
-            {activities.map((activity, idx) => (
-              <li
-                key={idx}
-                className="text-accent2 text-xs sm:text-sm md:text-base font-mincho flex items-start gap-2"
-              >
-                <span className="text-accent1 mt-1 flex-shrink-0">•</span>
-                <span className="flex-1">{activity}</span>
-              </li>
-            ))}
+            {activities.map((activity, idx) => {
+              const isHighlight = typeof activity !== "string" && activity.highlight;
+              const text = typeof activity === "string" ? activity : activity.text;
+
+              return (
+                <li
+                  key={idx}
+                  className={`text-xs sm:text-sm md:text-base font-mincho flex items-start gap-2 ${
+                    isHighlight ? "text-accent3 font-bold" : "text-accent2"
+                  }`}
+                >
+                  <span
+                    className={`mt-1 flex-shrink-0 ${
+                      isHighlight ? "text-accent3" : "text-accent1"
+                    }`}
+                  >
+                    {isHighlight ? "★" : "•"}
+                  </span>
+                  <span className="flex-1">{text}</span>
+                </li>
+              );
+            })}
           </ul>
         </div>
       </div>

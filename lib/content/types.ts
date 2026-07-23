@@ -6,9 +6,12 @@ export interface ValueCard {
   gradient?: string;
 }
 
+// 문자열이면 일반 항목, 객체면 강조 항목(게임·마케팅 실적)
+export type TimelineActivity = string | { text: string; highlight: boolean };
+
 export interface TimelineEntry {
   year: string;
-  activities: string[];
+  activities: TimelineActivity[];
 }
 
 export interface PortfolioProject {

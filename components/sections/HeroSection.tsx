@@ -55,9 +55,11 @@ export default function HeroSection({ content }: { content: SiteContent["hero"] 
           <p className="text-base sm:text-lg md:text-xl text-accent2 font-mincho leading-relaxed">
             {content.tagline}
           </p>
-          <p className="text-xs sm:text-sm md:text-base text-accent2/70 mt-3 italic">
-            {content.taglineEn}
-          </p>
+          {content.taglineEn && (
+            <p className="text-xs sm:text-sm md:text-base text-accent2/70 mt-3 italic">
+              {content.taglineEn}
+            </p>
+          )}
         </motion.div>
       </motion.div>
 

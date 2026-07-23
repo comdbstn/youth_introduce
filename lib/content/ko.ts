@@ -49,8 +49,8 @@ const timelineData = [
   {
     year: "2020",
     activities: [
-      "2020 게임 콘테스트 입상",
-      "2020 청소년 게임잼 디자인상",
+      { text: "2020 게임 콘테스트 입상", highlight: true },
+      { text: "2020 청소년 게임잼 디자인상", highlight: true },
       "TOWON 건축사무소 인턴",
       "Duoringgo 110",
     ],
@@ -58,14 +58,14 @@ const timelineData = [
   {
     year: "2021",
     activities: [
-      "2021 부산 인디커넥트 페스티벌",
-      "게임기획전문가 자격 취득",
+      { text: "2021 부산 인디커넥트 페스티벌", highlight: true },
+      { text: "게임기획전문가 자격 취득", highlight: true },
       "고등학교 졸업",
       "대학 입학",
       "HOIT Connect",
       "워드프로세서 자격 취득",
       "위즈아카데미 부동산 경매 과정 수료",
-      "SBS아카데미 게임기획 과정 수료",
+      { text: "SBS아카데미 게임기획 과정 수료", highlight: true },
       "SBS아카데미 프로그래밍 과정 수료",
     ],
   },
@@ -79,21 +79,21 @@ const timelineData = [
       "서울대학교 청소년심리학 과정 수료",
       "토바스튜디오 기획",
       "엠미팅아이",
-      "About Meeting 사내이사",
+      { text: "About Meeting 사내이사", highlight: true },
       "샤에듀 창업",
     ],
   },
   {
     year: "2023",
     activities: [
-      "C#과 Unity로 만드는 게임 개발 시리즈 수료",
+      { text: "C#과 Unity로 만드는 게임 개발 시리즈 수료", highlight: true },
       "UniTalk Studio 대표",
       "크리에이티브 토픽 협업",
       "Rich MZ 강사",
       "Mee'Bud 대표",
       "GREIT 학회장",
       "MS Academy 강사",
-      "드림박스 주식회사 대표이사",
+      { text: "드림박스 주식회사 대표이사", highlight: true },
       "엄이친찍 프로젝트",
       "서울대학교 해동 스타트업 23기 수료",
       "라이프해킹스쿨 창업 부트캠프 수료",
@@ -106,27 +106,28 @@ const timelineData = [
   {
     year: "2024",
     activities: [
-      "드림박스 주식회사 월매출 1000만 원 달성",
-      "롯데칠성음료 마케팅 수주 및 집행",
+      { text: "롯데칠성음료 마케팅 수주 및 집행", highlight: true },
+      { text: "드림박스 주식회사 월매출 1000만 원 달성", highlight: true },
+      { text: "BridgeMarketing 대표이사 수락", highlight: true },
+      { text: "양양 DJ 페스티벌 행사 총괄", highlight: true },
       "오사카 니시나리구 에어비앤비 오픈",
       "창업학회 창공 회장",
       "FreeYourMind 이사직 수락",
       "NeonFlow Director 수락",
-      "BridgeMarketing 대표이사 수락",
-      "양양 DJ 페스티벌 행사 총괄",
       "KT&G 상상플래닛 멤버",
     ],
   },
   {
     year: "2025",
     activities: [
-      "브릿지마케팅 상반기 매출 3500 달성",
+      { text: "브릿지마케팅 상반기 매출 3500 달성", highlight: true },
+      "JLPT N3 합격",
       "주식회사 코버스 대표이사직 수주",
     ],
   },
 ];
 
-const portfolioData = [
+const portfolioDataRaw = [
   // 사업 (Startup)
   {
     id: "korvus",
@@ -669,9 +670,15 @@ const portfolioData = [
 const categories = [
   { value: "all", label: "전체" },
   { value: "startup", label: "사업 실적" },
-  { value: "development", label: "개발 실적" },
   { value: "marketing", label: "마케팅 실적" },
+  { value: "development", label: "개발 실적" },
 ];
+
+// 사업 → 마케팅 → 개발 순으로 노출. sort 는 안정 정렬이라 카테고리 내부 순서는 유지됨.
+const categoryOrder = ["startup", "marketing", "development"];
+const portfolioData = [...portfolioDataRaw].sort(
+  (a, b) => categoryOrder.indexOf(a.category) - categoryOrder.indexOf(b.category)
+);
 
 export const ko: SiteContent = {
   loading: {
@@ -680,18 +687,18 @@ export const ko: SiteContent = {
   hero: {
     name: "정윤수",
     romaji: "정윤수 | Jung Yunsu",
-    role: "퍼포먼스 · 그로스 마케터",
-    tagline: "움직이지 않으면, 아이디어는 그저 말일 뿐이다.",
-    taglineEn: "Ideas mean nothing until they move.",
+    role: "zero to one 그로스 마케터",
+    tagline: "퍼포먼스, 바이럴, 오프라인, CPC 모두 소화 가능한 마케팅 인재",
+    taglineEn: "",
   },
   about: {
-    heading: "마케터, 정윤수",
+    heading: "zero to one, 마케터",
     paragraphs: [
-      "한국에서 마케팅으로 커리어를 시작해, 3년간 직접 사업을 운영하며 퍼포먼스·바이럴·SNS 마케팅을 기획부터 실행·개선까지 일관되게 담당해왔습니다.",
-      "Meta 등 운용형 광고와 CPC 캠페인, 오프라인 프로모션, 집객 동선 설계를 실무로 다뤘고, 마케팅을 지원하는 자동화 도구를 직접 개발(Python·JavaScript)해 계측과 개선 속도를 끌어올렸습니다.",
+      "「움직이지 않으면 아이디어는 그저 말일 뿐」 — 이 문장이 제가 일하는 방식입니다. 3년간 직접 사업을 운영하며 퍼포먼스·바이럴·SNS 마케팅을 기획부터 실행·계측·개선까지 혼자 끝까지 굴려왔습니다. 롯데칠성음료 등 대기업 브랜드의 마케팅을 수주·집행했고, 운영하던 사업을 월매출 1,000만 원 규모로 키웠습니다.",
+      "Meta 운용형 광고와 CPC 캠페인, 오프라인 프로모션, 집객 동선 설계가 제 실무 영역입니다. 여기서 멈추지 않고, 마케팅을 더 빠르게 돌리기 위한 자동화 도구를 직접 개발(Python·JavaScript)해 계측·리포팅·개선 속도를 끌어올렸습니다. 전략을 세우는 사람이 도구까지 만들 수 있을 때, 실행은 훨씬 빨라진다고 믿습니다.",
     ],
     closing:
-      "한국어·일본어를 활용한 한일 마케팅이 가능하며, 어릴 때부터 게임을 만들고 즐겨온 사람으로서 게임업계에서 마케팅으로 기여하며 오래 성장하는 것이 목표입니다.",
+      "무엇보다 저는 어릴 때부터 게임을 직접 만들고 즐겨온 사람입니다. 게임 콘테스트 입상과 부산 인디커넥트 페스티벌을 거치며 쌓은 '만드는 사람'의 감각을, 시장을 읽고 파는 마케팅의 힘과 게임업계 안에서 합치는 것 — 그리고 그 안에서 오래 성장하는 것이 목표입니다. 한국어·일본어로 한일 시장을 잇는 일 또한 제 강점입니다.",
     coreValuesTitle: "Core Values",
     mainValues,
     subValues,
@@ -703,7 +710,7 @@ export const ko: SiteContent = {
   },
   portfolio: {
     title: "Portfolio",
-    subtitle: "사업 · 개발 · 마케팅 실적",
+    subtitle: "사업 · 마케팅 · 개발 실적",
     categories,
     projects: portfolioData,
     showLess: "접기 ▲",
