@@ -45,7 +45,7 @@ const subValues = [
   },
 ];
 
-const timelineData = [
+const timelineDataRaw = [
   {
     year: "2020",
     activities: [
@@ -126,6 +126,17 @@ const timelineData = [
     ],
   },
 ];
+
+// 강조(게임·마케팅) 항목을 각 연도 안에서 위로. 안정 정렬이라 나머지 상대 순서는 유지됨.
+const isHighlighted = (a: (typeof timelineDataRaw)[number]["activities"][number]) =>
+  typeof a !== "string" && a.highlight;
+
+const timelineData = timelineDataRaw.map((entry) => ({
+  ...entry,
+  activities: [...entry.activities].sort(
+    (a, b) => Number(isHighlighted(b)) - Number(isHighlighted(a))
+  ),
+}));
 
 const portfolioDataRaw = [
   // 사업 (Startup)
@@ -528,11 +539,11 @@ const portfolioDataRaw = [
   },
   {
     id: "lecosme",
-    title: "루코스메",
+    title: "르코스메",
     subtitle: "마케팅 대행",
     period: "",
     url: "",
-    description: "한국 화장품 브랜드 「루코스메」의 마케팅 전략 수립 및 실행. SNS 마케팅, 인플루언서 마케팅, 온라인 광고 운용을 통해 브랜드 인지도 향상과 온라인 매출 증대를 달성.",
+    description: "한국 화장품 브랜드 「르코스메」의 마케팅 전략 수립 및 실행. SNS 마케팅, 인플루언서 마케팅, 온라인 광고 운용을 통해 브랜드 인지도 향상과 온라인 매출 증대를 달성.",
     tech: ["SNS 마케팅", "인플루언서 마케팅", "광고 운용"],
     features: [
       "SNS 전략 수립 - 인스타그램, 틱톡 활용",
