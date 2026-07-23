@@ -4,10 +4,11 @@ import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 
 interface LoadingScreenProps {
+  name: string;
   onLoadingComplete: () => void;
 }
 
-export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps) {
+export default function LoadingScreen({ name, onLoadingComplete }: LoadingScreenProps) {
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
@@ -73,7 +74,7 @@ export default function LoadingScreen({ onLoadingComplete }: LoadingScreenProps)
         transition={{ delay: 0.2, duration: 0.8 }}
         className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-6 sm:mb-8 text-center font-mincho"
       >
-        鄭允琇
+        {name}
       </motion.h1>
 
       {/* プログレスバー */}

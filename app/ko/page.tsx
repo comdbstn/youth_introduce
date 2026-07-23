@@ -10,19 +10,19 @@ import PortfolioSection from "@/components/sections/PortfolioSection";
 import ConnectSection from "@/components/sections/ConnectSection";
 import FloatingContactButton from "@/components/ui/FloatingContactButton";
 import LanguageToggle from "@/components/ui/LanguageToggle";
-import { ja } from "@/lib/content/ja";
+import { ko } from "@/lib/content/ko";
 
-export default function Home() {
+export default function KoreanHome() {
   const [isLoading, setIsLoading] = useState(true);
 
   return (
     <>
-      <LanguageToggle current="ja" />
+      <LanguageToggle current="ko" />
 
       <AnimatePresence>
         {isLoading && (
           <LoadingScreen
-            name={ja.loading.name}
+            name={ko.loading.name}
             onLoadingComplete={() => setIsLoading(false)}
           />
         )}
@@ -31,11 +31,11 @@ export default function Home() {
       {!isLoading && (
         <>
           <main className="min-h-screen">
-            <HeroSection content={ja.hero} />
-            <AboutSection content={ja.about} />
-            <WorksSection content={ja.works} />
-            <PortfolioSection content={ja.portfolio} labels={ja.card} />
-            <ConnectSection content={ja.connect} />
+            <HeroSection content={ko.hero} />
+            <AboutSection content={ko.about} />
+            <WorksSection content={ko.works} />
+            <PortfolioSection content={ko.portfolio} labels={ko.card} />
+            <ConnectSection content={ko.connect} />
           </main>
           <FloatingContactButton />
         </>

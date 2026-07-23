@@ -3,8 +3,9 @@
 import { motion } from "framer-motion";
 import ParticleBackground from "../animations/ParticleBackground";
 import ScrollIndicator from "../ui/ScrollIndicator";
+import type { SiteContent } from "@/lib/content/types";
 
-export default function HeroSection() {
+export default function HeroSection({ content }: { content: SiteContent["hero"] }) {
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden bg-primary w-full max-w-full">
       {/* 파티클 배경 애니메이션 */}
@@ -25,10 +26,10 @@ export default function HeroSection() {
           className="mb-10 sm:mb-12"
         >
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-3 sm:mb-4 tracking-tight leading-tight font-mincho">
-            鄭允琇
+            {content.name}
           </h1>
           <div className="text-accent1 text-base sm:text-lg md:text-xl tracking-wide">
-            Tei Youth | テイ・ユース
+            {content.romaji}
           </div>
         </motion.div>
 
@@ -40,7 +41,7 @@ export default function HeroSection() {
           className="mb-8 sm:mb-10"
         >
           <p className="text-xl sm:text-2xl md:text-3xl text-accent1 font-haas tracking-wide">
-            Full-Stack Developer
+            {content.role}
           </p>
         </motion.div>
 
@@ -52,10 +53,10 @@ export default function HeroSection() {
           className="max-w-2xl mx-auto px-2"
         >
           <p className="text-base sm:text-lg md:text-xl text-accent2 font-mincho leading-relaxed">
-            動かなければ、アイデアはただの言葉だ。
+            {content.tagline}
           </p>
           <p className="text-xs sm:text-sm md:text-base text-accent2/70 mt-3 italic">
-            Ideas mean nothing until they move.
+            {content.taglineEn}
           </p>
         </motion.div>
       </motion.div>

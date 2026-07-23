@@ -2,28 +2,16 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-interface PortfolioProject {
-  id: string;
-  title: string;
-  subtitle: string;
-  period: string;
-  url: string;
-  description: string;
-  tech: string[];
-  features?: string[];
-  achievements?: string[];
-  category: string;
-  images?: string[];
-}
+import type { PortfolioProject, SiteContent } from "@/lib/content/types";
 
 interface PortfolioCardProps {
   project: PortfolioProject;
+  labels: SiteContent["card"];
   index: number;
   isInView: boolean;
 }
 
-export default function PortfolioCard({ project, index, isInView }: PortfolioCardProps) {
+export default function PortfolioCard({ project, labels, index, isInView }: PortfolioCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
@@ -112,7 +100,7 @@ export default function PortfolioCard({ project, index, isInView }: PortfolioCar
             )}
           </div>
           <p className="text-sm sm:text-base text-accent1 mb-2">{project.subtitle}</p>
-          <p className="text-xs sm:text-sm text-accent2/70">期間: {project.period}</p>
+          <p className="text-xs sm:text-sm text-accent2/70">{labels.periodLabel} {project.period}</p>
         </div>
 
         {/* 説明 */}
@@ -122,7 +110,7 @@ export default function PortfolioCard({ project, index, isInView }: PortfolioCar
 
         {/* 技術スタック */}
         <div className="mb-4">
-          <p className="text-xs sm:text-sm text-accent1 mb-2 font-bold">技術スタック:</p>
+          <p className="text-xs sm:text-sm text-accent1 mb-2 font-bold">{labels.techLabel}</p>
           <div className="flex flex-wrap gap-2">
             {project.tech.map((tech, idx) => (
               <span
@@ -141,7 +129,7 @@ export default function PortfolioCard({ project, index, isInView }: PortfolioCar
             onClick={() => setIsExpanded(!isExpanded)}
             className="text-accent3 text-sm sm:text-base hover:text-accent1 transition-colors font-bold flex items-center gap-2"
           >
-            {isExpanded ? "詳細を閉じる" : "詳細を見る"}
+            {isExpanded ? labels.hideDetail : labels.showDetail}
             <motion.svg
               animate={{ rotate: isExpanded ? 180 : 0 }}
               transition={{ duration: 0.3 }}
@@ -174,7 +162,7 @@ export default function PortfolioCard({ project, index, isInView }: PortfolioCar
             {/* イメージギャラリー */}
             {project.images && project.images.length > 0 && (
               <div className="mb-4">
-                <p className="text-sm font-bold text-white mb-3">プロジェクト画像:</p>
+                <p className="text-sm font-bold text-white mb-3">{labels.imagesLabel}</p>
                 <div className="grid grid-cols-2 gap-2 sm:gap-3">
                   {project.images.map((image, idx) => (
                     <motion.div
@@ -201,7 +189,7 @@ export default function PortfolioCard({ project, index, isInView }: PortfolioCar
 
             {project.features && (
               <div className="mb-4">
-                <p className="text-sm font-bold text-white mb-2">主な機能:</p>
+                <p className="text-sm font-bold text-white mb-2">{labels.featuresLabel}</p>
                 <ul className="space-y-1">
                   {project.features.map((feature, idx) => (
                     <li
@@ -217,7 +205,7 @@ export default function PortfolioCard({ project, index, isInView }: PortfolioCar
             )}
             {project.achievements && (
               <div className="mb-4">
-                <p className="text-sm font-bold text-white mb-2">成果:</p>
+                <p className="text-sm font-bold text-white mb-2">{labels.achievementsLabel}</p>
                 <ul className="space-y-1">
                   {project.achievements.map((achievement, idx) => (
                     <li
@@ -236,7 +224,7 @@ export default function PortfolioCard({ project, index, isInView }: PortfolioCar
             {project.category === "marketing" && (
               <div className="pt-4 border-t border-accent1/10">
                 <p className="text-xs sm:text-sm text-accent2/60 italic font-mincho">
-                  *マーケティングポートフォリオはセキュリティポリシー上、画像を添付しておりません。
+                  {labels.marketingNote}
                 </p>
               </div>
             )}

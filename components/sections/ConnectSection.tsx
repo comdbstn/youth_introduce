@@ -3,26 +3,14 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import ParticleBackground from "../animations/ParticleBackground";
+import type { SiteContent } from "@/lib/content/types";
 
-export default function ConnectSection() {
+export default function ConnectSection({ content }: { content: SiteContent["connect"] }) {
   const sectionRef = useRef<HTMLElement>(null);
   // 모바일과 PC 모두 25%가 보일 때 애니메이션 시작
   const isInView = useInView(sectionRef, { once: true, amount: 0.25 });
 
-  const socialLinks = [
-    {
-      name: "Instagram",
-      icon: "📸",
-      url: "https://www.instagram.com/tei.youth/",
-      description: "日常とインサイト",
-    },
-    {
-      name: "Email",
-      icon: "📧",
-      url: "mailto:jys13230@gmail.com",
-      description: "直接お問い合わせ",
-    },
-  ];
+  const { socialLinks } = content;
 
   return (
     <section
@@ -42,11 +30,11 @@ export default function ConnectSection() {
           className="mb-12 sm:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight px-2">
-            Let&apos;s Connect
+            {content.title}
           </h2>
           <div className="w-20 sm:w-24 h-1 bg-accent3 mx-auto mb-4 sm:mb-6"></div>
           <p className="text-lg sm:text-xl md:text-2xl text-accent2 font-mincho px-4">
-            コーヒー一杯いかがですか？
+            {content.subtitle}
           </p>
         </motion.div>
 
@@ -63,10 +51,10 @@ export default function ConnectSection() {
             rel="noopener noreferrer"
             className="inline-block bg-gradient-to-r from-accent3 to-accent1 text-primary font-bold text-base sm:text-lg md:text-xl px-8 sm:px-10 md:px-12 py-4 sm:py-5 rounded-full hover:shadow-2xl hover:shadow-accent3/50 active:shadow-lg active:scale-95 transition-all duration-300 transform hover:scale-105 min-h-[56px] flex items-center justify-center"
           >
-            💬 LINE友達追加
+            {content.ctaLabel}
           </a>
           <p className="mt-3 sm:mt-4 text-accent2/70 text-xs sm:text-sm">
-            いつでもお気軽にご連絡ください
+            {content.ctaNote}
           </p>
         </motion.div>
 
@@ -86,7 +74,7 @@ export default function ConnectSection() {
           className="px-4"
         >
           <h3 className="text-xl sm:text-2xl font-bold text-white mb-6 sm:mb-8">
-            または、こちらからも
+            {content.socialHeading}
           </h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6 max-w-2xl mx-auto">
             {socialLinks.map((link, index) => (
@@ -124,10 +112,10 @@ export default function ConnectSection() {
           className="mt-20 pt-10 border-t border-accent1/20"
         >
           <p className="text-accent2/60 text-sm mb-4 font-mincho">
-            動かなければ、アイデアはただの言葉だ。
+            {content.footerTagline}
           </p>
           <p className="text-accent2/40 text-xs">
-            © 2025 Tei Youth. All rights reserved.
+            {content.copyright}
           </p>
         </motion.div>
       </div>

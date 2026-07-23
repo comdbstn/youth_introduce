@@ -2,57 +2,13 @@
 
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
+import type { SiteContent } from "@/lib/content/types";
 
-export default function AboutSection() {
+export default function AboutSection({ content }: { content: SiteContent["about"] }) {
   const sectionRef = useRef<HTMLElement>(null);
   const isInView = useInView(sectionRef, { once: true, amount: 0.2 });
 
-  // メインカード（大きく強調されたカード）
-  const mainValues = [
-    {
-      title: "AI活用",
-      subtitle: "AI Utilization",
-      description: "市場にあるほぼすべてのAIツール及びAgentを活用して業務空間を最適化します。",
-      icon: "🤖",
-      gradient: "from-purple-500/20 to-blue-500/20",
-    },
-    {
-      title: "開発",
-      subtitle: "Development",
-      description: "速い学習と効率的なライブラリ活用で、Web/App/SaaS/ゲームまですべてのソフトウェアの開発が可能です。",
-      icon: "💻",
-      gradient: "from-blue-500/20 to-cyan-500/20",
-    },
-    {
-      title: "マーケティング",
-      subtitle: "Marketing",
-      description: "SNS・SEO・広告運用まで、データドリブンなマーケティング戦略の立案と実行経験があります。",
-      icon: "📊",
-      gradient: "from-cyan-500/20 to-green-500/20",
-    },
-  ];
-
-  // サブカード（小さいカード）
-  const subValues = [
-    {
-      title: "教育",
-      subtitle: "Education",
-      description: "不動産、AI等多様な分野の教育経験",
-      icon: "📚",
-    },
-    {
-      title: "チームリーダーシップ",
-      subtitle: "Team Leadership",
-      description: "プロジェクトリーダー・チーム統括の実務経験",
-      icon: "👥",
-    },
-    {
-      title: "グローバル",
-      subtitle: "Global",
-      description: "韓国語・日本語・英語でのコミュニケーション",
-      icon: "🌏",
-    },
-  ];
+  const { mainValues, subValues } = content;
 
   return (
     <section
@@ -68,7 +24,7 @@ export default function AboutSection() {
           className="text-center mb-12 sm:mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight px-2">
-            From Seoul to Yokohama
+            {content.heading}
           </h2>
           <div className="w-20 sm:w-24 h-1 bg-accent1 mx-auto"></div>
         </motion.div>
@@ -81,20 +37,16 @@ export default function AboutSection() {
           className="mb-16 sm:mb-20"
         >
           <div className="prose prose-invert max-w-none">
-            <p className="text-base sm:text-lg md:text-xl text-accent2 leading-relaxed mb-5 sm:mb-6 font-mincho">
-              韓国でウェブ開発キャリアをスタートし、現在は横浜を拠点に活動しているフルスタック開発者です。
-            </p>
-            <p className="text-base sm:text-lg md:text-xl text-accent2 leading-relaxed mb-5 sm:mb-6 font-mincho">
-              DreamBox株式会社にてSaaS・AIエージェントの開発を3年間リードし、設計からデプロイまでの全工程を担当しました。
-            </p>
-            <p className="text-base sm:text-lg md:text-xl text-accent2 leading-relaxed mb-5 sm:mb-6 font-mincho">
-              Bridge Marketingではウェブサービスの技術基盤を2年間構築し、10以上のプロジェクトを納品しました。
-            </p>
-            <p className="text-base sm:text-lg md:text-xl text-accent2 leading-relaxed mb-5 sm:mb-6 font-mincho">
-              大学在学中から複数のプロジェクトに携わり、開発・企画・チームマネジメントの実務経験を積んできました。
-            </p>
+            {content.paragraphs.map((paragraph, index) => (
+              <p
+                key={index}
+                className="text-base sm:text-lg md:text-xl text-accent2 leading-relaxed mb-5 sm:mb-6 font-mincho"
+              >
+                {paragraph}
+              </p>
+            ))}
             <p className="text-base sm:text-lg md:text-xl text-accent3 leading-relaxed font-mincho font-bold">
-              「動かなければ、アイデアはただの言葉だ」という信念のもと、常に実行を重視し、チームと共にプロダクトを成長させることにやりがいを感じています。
+              {content.closing}
             </p>
           </div>
         </motion.div>
@@ -106,7 +58,7 @@ export default function AboutSection() {
           transition={{ duration: 0.5, delay: 0.2 }}
         >
           <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-8 sm:mb-12 text-center">
-            Core Values
+            {content.coreValuesTitle}
           </h3>
 
           {/* メインカード - 3列グリッド */}
