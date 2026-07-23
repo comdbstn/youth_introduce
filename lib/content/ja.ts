@@ -730,6 +730,7 @@ export const ja: SiteContent = {
     title: "Let's Connect",
     subtitle: "コーヒー一杯いかがですか？",
     ctaLabel: "💬 LINE友達追加",
+    ctaUrl: "https://line.me/ti/p/De3-6cw7W7",
     ctaNote: "いつでもお気軽にご連絡ください",
     socialHeading: "または、こちらからも",
     socialLinks: [

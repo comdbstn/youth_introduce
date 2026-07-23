@@ -83,6 +83,7 @@ export interface SiteContent {
     title: string;
     subtitle: string;
     ctaLabel: string;
+    ctaUrl: string;
     ctaNote: string;
     socialHeading: string;
     socialLinks: SocialLink[];

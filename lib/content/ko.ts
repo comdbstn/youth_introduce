@@ -94,7 +94,7 @@ const timelineData = [
       "GREIT 학회장",
       "MS Academy 강사",
       "드림박스 주식회사 대표이사",
-      "オムイチンチク 프로젝트",
+      "엄이친찍 프로젝트",
       "서울대학교 해동 스타트업 23기 수료",
       "라이프해킹스쿨 창업 부트캠프 수료",
       "라이프해킹스쿨 리더 스피치 수료",
@@ -723,7 +723,8 @@ export const ko: SiteContent = {
   connect: {
     title: "Let's Connect",
     subtitle: "커피 한잔 어떠세요?",
-    ctaLabel: "💬 LINE 친구 추가",
+    ctaLabel: "📧 이메일로 연락하기",
+    ctaUrl: "mailto:jys13230@gmail.com",
     ctaNote: "언제든 편하게 연락 주세요",
     socialHeading: "또는, 이쪽으로도",
     socialLinks: [

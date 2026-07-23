@@ -46,7 +46,7 @@ export default function ConnectSection({ content }: { content: SiteContent["conn
           className="mb-12 sm:mb-16 px-4"
         >
           <a
-            href="https://line.me/ti/p/De3-6cw7W7"
+            href={content.ctaUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-gradient-to-r from-accent3 to-accent1 text-primary font-bold text-base sm:text-lg md:text-xl px-8 sm:px-10 md:px-12 py-4 sm:py-5 rounded-full hover:shadow-2xl hover:shadow-accent3/50 active:shadow-lg active:scale-95 transition-all duration-300 transform hover:scale-105 min-h-[56px] flex items-center justify-center"
